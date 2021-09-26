@@ -1,0 +1,178 @@
+[user]
+    email = darko.tasevski@redbox.com 
+    name = <name>
+[gpg]
+	program = gpg
+[commit]
+	gpgsign = true # https://help.github.com/articles/signing-commits-using-gpg/
+[core]
+    editor = nvim
+    pager = diff-so-fancy | less --tabs=4 -RFX
+	excludesfile = ~/.gitignore_global
+    attributesfile = ~/.gitattributes_global
+    autocrlf = input # auto-converts crlf=>lf on checkin
+	# Make `git rebase` safer on macOS
+	# More info: <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
+	trustctime = false
+	# Prevent showing files whose names contain non-ASCII symbols as unversioned.
+	# http://michael-kuehnel.de/git/2014/11/21/git-mac-osx-and-german-umlaute.html
+	precomposeunicode = false
+	# Speed up commands involving untracked files such as `git status`.
+	# https://git-scm.com/docs/git-update-index#_untracked_cache
+	untrackedCache = true
+[color "diff-highlight"]
+    oldNormal = red bold
+    oldHighlight = yellow bold 52
+    newNormal = green bold
+    newHighlight = cyan bold 22
+[color "diff"]
+    meta = 11
+    frag = magenta bold
+    commit = cyan bold
+    old = red bold
+    new = green bold
+    whitespace = red reverse
+[color "branch"]
+	current = cyan reverse bold
+	local = yellow
+	remote = green
+[color "status"]
+	header = blue
+	added = green bold
+	changed = yellow bold
+	untracked = cyan
+[push]
+	default = current # When pushing code, always push only your current branch to a branch of the same name
+	followTags = true # Make `git push` push relevant annotated tags when pushing branches out.
+[pull]
+    rebase = true
+[credential]
+	helper = cache --timeout=604800 # One week in-mem caching of HTTPS credentials
+[alias]
+    fixup = "!sh -c '(git diff-files --quiet || (echo Unstaged changes, please commit or stash with --keep-index; exit 1)) && COMMIT=$(git rev-parse $1) && git commit --fixup=$COMMIT && git rebase -i --autosquash $COMMIT~1' -"
+
+  # list files which have changed since GIT_REVIEW_BASE
+  # (GIT_REVIEW_BASE defaults to 'master' in env file)
+    files = !git diff --name-only $(git merge-base HEAD \"$GIT_REVIEW_BASE\")
+
+  # Same as above, but with a diff stat instead of just names
+  # (better for interactive use)
+    stat = !git diff --stat $(git merge-base HEAD \"$GIT_REVIEW_BASE\")
+
+  # Open all files changed since GIT_REVIEW_BASE in Vim tabs
+  # Then, run fugitive's :Gdiff in each tab, and finally
+  # tell vim-gitgutter to show +/- for changes since GIT_REVIEW_BASE
+    review = !nvim -p $(git files) +\"tabdo Gdiff $GIT_REVIEW_BASE\" +\"let g:gitgutter_diff_base = '$GIT_REVIEW_BASE'\"
+
+  # Same as the above, except specify names of files as arguments,
+  # instead of opening all files:
+  # git reviewone foo.js bar.js
+    reviewone = !nvim -p +\"tabdo Gdiff $GIT_REVIEW_BASE\" +\"let g:gitgutter_diff_base = '$GIT_REVIEW_BASE'\"
+
+	aliases = config --get-regexp alias # List aliases
+    com = commit --message
+    cam = commit --all --message
+    ca = !git add -A && git commit -av  # Commit all changes (verbose)
+    config = config --global --list
+    fap = fetch --all --prune # Fetch all remotes and remove any remote-tracking references that no longer exist on the remote.
+    info = remote show origin # displays info for your remote origin repo
+	amend = commit --amend --reuse-message=HEAD # Amend the currently staged files to the latest commit
+    uncommit = reset --soft HEAD~1 # remove the last commit from the current branch, but the file changes will stay in the working tree
+    undopush = push -f origin HEAD^:master
+    st = status -sb     # show short format and branch info
+    ts = status -uno
+    unstage = reset HEAD -- # Reset a single file in the index. Usage: git unstage frotz.c
+    upfork = fetch upstream; git checkout master; git merge upstream/master
+    fix = commit --amend --no-edit
+    sta = stash
+    staa = stash apply
+    stashes = stash list
+	sub = submodule update --remote
+
+    ##### short and sweet #####
+    p = push
+    m = merge --no-ff
+    l = pull
+    b = branch -v
+    c = clone --recursive # Clone a repository including all submodules
+    cm = checkout master
+    co = checkout
+    aa = add .
+    difs = diff --ignore-all-space
+    difw = diff --color-words
+    cb = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f" # Switch to a branch, creating it if necessary
+
+    ##### Semantic commits #####
+	# Usage: git ccho "add build scripts for travis"
+    cdoc = "!f() { git commit -m \"docs: $1\"; }; f"
+    cfet = "!f() { git commit -m \"feat: $1\"; }; f"
+    cfix = "!f() { git commit -m \"fix: $1\"; }; f"
+    ccho = "!f() { git commit -m \"chore: $1\"; }; f"
+    cref = "!f() { git commit -m \"refactor: $1\"; }; f"
+    csty = "!f() { git commit -m \"style: $1\"; }; f"
+    ctes = "!f() { git commit -m \"test: $1\"; }; f"
+   
+    ##### log aliases #####
+    # View abbreviated SHA, description, history graph, time and author
+    glog = log --color --graph --date=iso --pretty=format':%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ci) %C(bold blue)<%an>%Creset' --abbrev-commit --
+    # Show a formatted commit tree
+    tree = log --graph --abbrev-commit --decorate --date=relative --format=format':%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+    ## show branching graphically as ascii art
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    # View abbreviated SHA, description, and history graph of the latest 20 commits
+	logl = log --pretty=oneline -n 20 --graph --abbrev-commit
+
+    ##### diff aliases #####
+	df = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat" # Show the diff between the latest commit and the current state
+
+	##### Pull, clone, etc. #####
+	pullall = !"git pull; git submodule foreach git pull origin master" # Pull in remote changes for the current repository and all its submodules
+	credit = "!f() { git commit --amend --author \"$1 <$2>\" -C HEAD; }; f" # Credit an author on the latest commit
+	reb = "!r() { git rebase -i HEAD~$1; }; r" # Interactive rebase with the given number of latest commits
+
+    ##### other #####
+	tags = tag -l # Show verbose output about tags, branches or remotes
+	branches = branch -a
+	remotes = remote -v
+	retag = "!r() { git tag -d $1 && git push origin :refs/tags/$1 && git tag $1; }; r" # Remove the old tag with this name and tag the latest commit with it.
+	findbranch = "!f() { git branch -a --contains $1; }; f" # Find branches containing commit
+	findtag = "!f() { git describe --always --contains $1; }; f" # Find tags containing commit
+	# Find commits by source code
+	fcommit = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short -S$1; }; f"
+	# Find commits by commit message
+	fcommitm = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short --grep=$1; }; f"
+
+	# Remove branches that have already been merged with master
+	dmerged = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
+	contrib = shortlog --summary --numbered # List contributors with number of commits
+[init]
+    templatedir = ~/.dotfiles/git/templates
+[url "ssh://git@github.com/"]
+    insteadOf = https://github.com/
+[merge]
+    tool = nvim
+	log = true # Include summaries of merged commits in newly created merge commit messages
+[mergetool "nvim"]
+    cmd = nvim -f -c \"Gdiff\" \"$MERGED\"
+[rebase]
+    autoSquash = true
+	# autoStash = true # https://git-scm.com/docs/git-rebase#git-rebase--autostash
+[status]
+    showUntrackedFiles = all
+[apply]
+	whitespace = fix # Detect whitespace errors when applying a patch
+[format]
+  	pretty = "%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset"
+[diff]
+	renames = copies # Detect copies as well as renames
+    tool = vimdiff
+[difftool]
+	prompt = false
+[diff "bin"]
+	textconv = hexdump -v -C # Use `hexdump` to diff binary files
+[log]
+	decorate = short # Show branch names with git log
+[rerere]
+    enabled = true # ask Git to remember how you've resolved a hunk conflict so that the next time it sees the same conflict, Git can resolve it for you automatically.
+[include]
+    path = .gitlocal # https://www.semipol.de/2013/08/26/sharing-the-git-config-across-different-computers-with-individual-modifications.html

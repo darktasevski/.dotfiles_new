@@ -1,0 +1,77 @@
+#!/bin/zsh
+
+################################
+# EXPORT ENVIRONMENT VARIABLES #
+################################
+
+export TERM='xterm-256color'
+export GPG_TTY=$(tty)   # https://github.com/keybase/keybase-issues/issues/2798
+export LANG=en_US.UTF-8 # Prefer US English and use UTF-8.
+export LANGUAGE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
+export MANPAGER='less -X' # Don’t clear the screen after quitting a manual page.
+export TMOUT=0
+# no lag on normal / insert mode switch   # see http://dougblack.io/words/zsh-vi-mode.html
+export KEYTIMEOUT=1
+
+export DOTFILES="$HOME/.dotfiles"
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_CACHE_HOME=$HOME/.cache
+export XDG_DATA_HOME=$HOME/.local/share
+
+# bash
+export BASHDIR="$HOME/.bash.d"
+
+# editor
+export EDITOR="nvim"
+export VISUAL="nvim"
+
+# zsh
+export ZDOTDIR="$HOME/.zsh"
+export TMUXDIR="$XDG_CONFIG_HOME/tmux"
+export TMUXDIR="$XDG_CONFIG_HOME/tmux"
+export VIMCONFIG="$XDG_CONFIG_HOME/nvim"
+export NVIM_PYTHON_LOG_FILE_PATH="~$HOME"/.nvimlog
+export FONTSDIR="$HOME/.fonts"
+export SECURE_STORAGE="$HOME/KEYS"
+export HISTFILE="$ZDOTDIR/.zhistory" # History filepath
+export HISTSIZE=10000                # Maximum events for internal history
+export SAVEHIST=10000                # Maximum events in history file
+
+# other software
+LOCAL_SBIN_PATH="/usr/local/sbin:$PATH"
+LOCAL_BIN_PATH="/usr/local/bin:$PATH"
+
+# fzf
+export FZF_DEFAULT_COMMAND="rg --files --hidden --glob '!.git'"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
+# Node
+export N_PREFIX="$HOME/.n"
+[[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"
+
+# Python
+PY_3_PATH="$HOME/Library/Python/3.7/bin:$PATH"
+
+# Smart TV stuff
+export LG_WEBOS_TV_SDK_HOME="/opt/webOS_TV_SDK"
+ARES_BIN_PATH=$PATH:/opt/webOS_TV_SDK/CLI/bin # LG webOS ares-cli - (it needs to be installed first)
+TIZEN_STUFF_PATH=${HOME}/Tizen/SDK/tools/ide/bin:${HOME}/Tizen/SDK/tools:${HOME}/Tizen/SDK/emulator/bin
+
+# Ruby/rbenv
+RBENV_PATH=$HOME/.rbenv/bin
+RUBY_GEMS=/usr/local/lib/ruby/gems/2.7.0/bin
+
+# Java
+export MAVEN_HOME=/usr/local/Cellar/maven/3.8.1
+JENV_PATH="$HOME/.jenv/bin:$PATH"
+export JENV_ROOT=/usr/local/opt/jenv
+
+# PATH
+export PATH=$PATH:${LOCAL_BIN_PATH}:${LOCAL_SBIN_PATH}:${PY_3_PATH}:${ARES_BIN_PATH}:${RUBY_GEMS}:${MAVEN_HOME}:$PATH
+
+# git
+export GIT_REVIEW_BASE="master" # See gitconfig
+GIT_EMAIL="darko.tasevski@redbox.com"
+GIT_USER="Darkø Tasevski"

@@ -1,0 +1,295 @@
+#!/bin/bash
+
+alias bigf= 'find / -xdev -type f -size +500M' # display "big" files > 500M
+alias sudo="sudo "                             # makes sudo recognize aliases.
+
+# Use htop if available
+if command -v htop >/dev/null; then
+	alias top='htop'
+fi
+
+# +-----+
+# | Zsh |
+# +-----+
+
+alias d='dirs -v'
+# for index ({1..9}) alias "$index"="cd +${index}"; unset index # directory stack
+alias reload='exec $SHELL -l' # Reload the shell (i.e. invoke as a login shell)
+
+# +-------------+
+# | Small utils |
+# +-------------+
+
+alias c=" clear"
+alias df='df -h' # human-readable sizes
+alias k9="kill -9"
+
+# +----+
+# | ls |
+# +----+
+
+alias ls='ls -G' 	# Enable colored output by default
+
+alias l='ls -lFh'   # size,show type,human readable
+alias la='ls -lAFh' # long list,show almost all,show type,human readable
+alias lr='ls -tRFh' # sorted by date,recursive,show type,human readable
+alias lt='ls -ltFh' # long list,sorted by date,show type,human readable
+alias ll='ls -l'    # long list
+alias lsd='ls -1F'  # ls for Directories.
+
+# +----+
+# | cp |
+# +----+
+
+alias cp='cp -iv' # confirm before overwriting something
+alias mv='mv -iv'
+alias rm='rm -i'
+alias rmf='rm -rf'
+alias la='ls -alh'
+
+# +------+
+# | grep |
+# +------+
+
+alias grep='grep --color=tty -d skip'
+# Always enable colored `grep` output`
+alias grep="grep --color=auto"
+alias fgrep="fgrep --color=auto"
+alias egrep="egrep --color=auto"
+
+# +------+
+# | ping |
+# +------+
+
+alias pg='ping 8.8.8.8'
+
+# +------+
+# | time |
+# +------+
+
+alias time='/usr/bin/time'
+
+# +----+
+# | bc |
+# +----+
+
+alias calc="noglob calcul"
+
+# +-----+
+# | bat |
+# +-----+
+
+alias batl='bat --paging=never -l log'
+
+if [[ "$(uname)" == "Darwin" ]]; then # Do something under Mac OS X platform
+	alias brewup='brew update && brew upgrade'
+	alias tree='tree -C -I $(git check-ignore * 2>/dev/null | tr "\n" "|").git'
+	# Empty the Trash on all mounted volumes and the main HDD.
+	# Also, clear Apple’s System Logs to improve shell startup speed.
+	# Finally, clear download history from quarantine. https://mths.be/bum
+	alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl; sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'"
+elif [[ "$(expr substr $(uname -s) 1 5)" == "Linux" ]]; then
+	# +--------+
+	# | System |
+	# +--------+
+
+	alias sysshutdown='sudo shutdown now'
+	alias sysrestart='sudo reboot'
+	alias syssuspend='sudo pm-suspend'
+
+	# +-----+
+	# | X11 |
+	# +-----+
+
+	alias xpropc='xprop | grep WM_CLASS' # display xprop class
+
+	# +--------+
+	# | pacman |
+	# +--------+
+
+	alias paci='sudo pacman -S'   # install
+	alias pachi='sudo pacman -Ql' # Pacman Has Installed - what files where installed in a package
+	alias pacs='sudo pacman -Ss'  # search
+	alias pacu='sudo pacman -Syu' # update
+	alias pacr='sudo pacman -R'   # remove package but not dependencies
+	alias pacrr='sudo pacman -Rs' # remove package with unused dependencies by other softwares
+	alias pacrc='sudo pacman -Sc' # remove pacman's cache
+	alias pacro='pacman -Rns $(pacman -Qtdq)'
+	alias pacrl='rm /var/lib/pacman/db.lck' # pacman remove locks
+	alias pacls="sudo pacman -Qe"
+	alias pacc='sudo pacman -Sc'
+	alias paccc='sudo pacman -Scc' # empty the whole cache
+
+	# +-----+
+	# | yay |
+	# +-----+
+
+	alias yayi='yay -S'   # install
+	alias yayhi='yay -Ql' # Yay Has Installed - what files where installed in a package
+	alias yays='yay -Ss'  # search
+	alias yayu='yay -Syu' # update
+	alias yayr='yay -R'   # remove package but not dependencies
+	alias yayrr='yay -Rs' # remove package with unused dependencies by other softwares
+	alias yayrc='yay -Sc' # remove yay's cache
+	alias yayls="yay -Qe"
+
+	# +--------+
+	# | netctl |
+	# +--------+
+
+	alias wifi='sudo wifi-menu -o'
+
+	# +----------------+
+	# | udiskie-umount |
+	# +----------------+
+
+	alias um='udiskie-umount'
+
+	# +---------+
+	# | netstat |
+	# +---------+
+
+	alias port="netstat -tulpn | grep"
+fi
+
+# +--------+
+# | Golang |
+# +--------+
+
+alias gob="go build"
+alias gor="go run"
+alias goc="go clean -i"
+alias gta="go test ./..."    # go test all
+alias gia="go install ./..." # go install all
+
+# +--------+
+# | muffet |
+# +--------+
+
+alias deadlink="muffet -t 20"
+
+# +--------+
+# | Neovim |
+# +--------+
+
+alias vim='nvim'
+alias vi='nvim'
+alias svim='sudoedit'
+alias dvim="vim -u /usr/share/nvim/archlinux.vim" # nvim with default config
+alias nvimc='rm -I $VIMCONFIG/swap/*'             # clean nvim swap file
+alias nvimcu='rm -I $VIMCONFIG/undo/*'            # clean the vim undo
+# alias nviml='nvim -w $VIMCONFIG/vimlog "$@"'      # log the keystrokes
+alias nvimn='nvim --noplugin -u NONE' # launch nvim without any plugin or config
+
+# +-----+
+# | Git |
+# +-----+
+
+alias g="git"
+alias gclean="git branch --merged | grep  -v '\\*\\|master\\|develop' | xargs -n 1 git branch -d"                                                                                                                                                                              # Delete local branch merged with master
+alias gblog="git for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'" # git log for each branches
+
+## logwork
+alias standup='log --since "1 day ago" --oneline --author $(git config user.email)'
+alias week='log --since "7 days ago" --author $(git config user.email) --format="%ai %s%n%b"'
+alias week1='!git log --author $(git config user.email) --since "1 week ago"'
+
+# Used with the git alias functions; gd, gds, gdw, gdws
+alias strip-diff-prefix='sed "s/^\([^-+ ]*\)[-+ ]/\\1/"'
+
+commit_types="feat: (new feature for the user, not a new feature for build script)
+fix: (bug fix for the user, not a fix to a build script)
+docs: (changes to the documentation)
+style: (formatting, missing semicolons, etc; no production code change)
+refactor: (refactoring production code, eg. renaming a variable)
+test: (adding missing tests, refactoring tests; no production code change)
+build: (changes to build tools or CI/CD configuration)
+chore: (updating npm scripts etc; no production code change)"
+
+alias semanticgit='echo $commit_types'
+
+# +------+
+# | tmux |
+# +------+
+
+alias tmuxk='tmux kill-session -t'
+alias tmuxa='tmux attach -t'
+alias tmuxl='tmux list-sessions'
+
+# +-------+
+# | tmuxp |
+# +-------+
+
+alias mux='tmuxp load'
+
+# +------+
+# | lynx |
+# +------+
+
+alias lynx='lynx -vikeys -accept_all_cookies'
+
+# +----------+
+# | Js stuff |
+# +----------+
+
+alias nvp='npm version patch'
+# Yarn aliases
+alias ya="yarn add"
+alias ycc="yarn cache clean"
+alias yrn="yarn run"
+alias yui="yarn upgrade-interactive"
+
+# +--------+
+# | docker |
+# +--------+
+alias docki="docker inspect"                                                  # display the information about a container
+alias docke='docker exec -t -i'                                               # going inside a container
+alias dockDE='docker rm $(docker ps -a -q) && docker rmi $(docker images -q)' # delete every containers / images
+alias dockstats='docker stats $(docker ps -q)'                                # stats on images
+alias dockls='docker ps'                                                      # list docker containers
+alias dockimg='docker images'                                                 # list images installed
+alias dockprune='docker system prune -a'                                      # prune everything
+alias dockceu='docker-compose run --rm -u $(id -u):$(id -g)'                  # run as the host user
+alias dockce='docker-compose run --rm'
+
+# +----------------+
+# | docker-compose |
+# +----------------+
+
+alias docker-compose-dev='docker-compose -f docker-compose-dev.yml' # run a different config file than the default one
+
+# +---------------+
+# | Network stuff |
+# +---------------+
+
+alias servers='sudo lsof -iTCP -sTCP:LISTEN -P -n'
+
+alias my-ip='curl -s http://ipinfo.io/ip' # find external ip
+alias my-ip-json='curl -s http://ifconfig.co/json'
+alias myip='ipconfig getifaddr en1 || ipconfig getifaddr en0' # find local ip
+# Show active network interfaces
+alias ifactive="ifconfig | pcregrep -M -o '^[^\t:]+:([^\n]|\n\t)*status: active'"
+# View HTTP traffic
+alias sniff="sudo ngrep -d 'en0' -t '^(GET|POST) ' 'tcp and port 80'"
+alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
+
+# +----------+
+# | Personal |
+# +----------+
+
+# Folders
+alias pro="$HOME/Projects"
+alias doc="$HOME/Documents"
+alias dow="$HOME/Downloads"
+alias dot="$HOME/.dotfiles"
+
+# Golang
+alias gosrc="$GOPATH/src/" # golang src
+alias gobin="$GOPATH/bin/" # golang bin
+
+# +---------+
+# | scripts |
+# +---------+
+
+alias ddg="duckduckgo"
+alias wiki="wikipedia"

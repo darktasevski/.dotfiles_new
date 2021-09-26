@@ -1,0 +1,32 @@
+# vi: filetype=tmux
+
+# Restoring tmux setups
+# Use this together with the `tmux-restore` function, as in
+# $ tmux-restore tv
+#
+# Based on
+# https://stackoverflow.com/a/40125397/200987
+# https://stackoverflow.com/a/40009032/200987
+
+# window 0 - main window in the left pane and 3 minor windows in the right pane
+new-window
+
+# Pane 1
+new-session -s vizio
+rename-window 'vizio';
+send-keys 'clear; z redbox/TV; git status' C-m
+
+# Pane 2
+split-window -h
+send-keys 'clear; z redbox/TV' C-m
+
+# Pane 3
+split-window -v
+send-keys 'clear; z redbox/TV' C-m
+select-pane -L; # go left
+
+# Pane 4
+split-window -v
+send-keys 'clear; z redbox/playbacksdk; git status' C-m
+select-pane -U; # go up to the first pane
+

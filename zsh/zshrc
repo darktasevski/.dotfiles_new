@@ -1,0 +1,192 @@
+#!/bin/zsh
+
+fpath=($DOTFILES/zsh/plugins $fpath)
+
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+# +------------+
+# | NAVIGATION |
+# +------------+
+
+setopt AUTO_CD # Go to folder path without using cd.
+
+setopt AUTO_PUSHD        # Push the old directory onto the stack on cd.
+setopt PUSHD_IGNORE_DUPS # Do not store duplicates in the stack.
+setopt PUSHD_SILENT      # Do not print the directory stack after pushd or popd.
+
+setopt CORRECT       # Spelling correction
+setopt CDABLE_VARS   # Change directory to a path stored in a variable.
+setopt EXTENDED_GLOB # Use extended globbing syntax.
+
+# +---------+
+# | HISTORY |
+# +---------+
+
+setopt EXTENDED_HISTORY       # Write the history file in the ':start:elapsed;command' format.
+setopt SHARE_HISTORY          # Share history between all sessions.
+setopt HIST_EXPIRE_DUPS_FIRST # Expire a duplicate event first when trimming history.
+setopt HIST_IGNORE_DUPS       # Do not record an event that was just recorded again.
+setopt HIST_IGNORE_ALL_DUPS   # Delete an old recorded event if a new event is a duplicate.
+setopt HIST_FIND_NO_DUPS      # Do not display a previously found event.
+setopt HIST_IGNORE_SPACE      # Do not record an event starting with a space.
+setopt HIST_SAVE_NO_DUPS      # Do not write a duplicate event to the history file.
+setopt HIST_VERIFY            # Do not execute immediately upon history expansion.
+
+# +--------+
+# | COLORS |
+# +--------+
+
+# No dircolors on OSX
+# @see https://unix.stackexchange.com/a/91978
+if whence dircolors >/dev/null; then
+  eval "$(dircolors -b $ZDOTDIR/dircolors)"
+  zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+  alias ls='ls --color'
+else
+  export CLICOLOR=1
+  zstyle ':completion:*:default' list-colors ''
+fi
+
+# +---------+
+# | ALIASES |
+# +---------+
+
+source $DOTFILES/aliases/aliases
+
+# +---------+
+# | SCRIPTS |
+# +---------+
+
+source $DOTFILES/zsh/scripts.zsh # Scripts
+
+# +-----------+
+# | PROFILING |
+# +-----------+
+
+# @see https://stackoverflow.com/a/63793601/7453363
+zmodload zsh/zprof
+
+# +---------+
+# | PLUGINS |
+# +---------+
+
+# Check if zplug is installed
+if [[ ! -d "$HOME"/.zplug ]]; then
+	git clone https://github.com/zplug/zplug "$HOME"/.zplug
+	source "$HOME"/.zplug/init.zsh && zplug update --self >/dev/null
+else
+	source "$HOME"/.zplug/init.zsh
+fi
+
+# Load completion library for those sweet [tab] squares
+zplug "lib/completion", from:oh-my-zsh
+zplug "plugins/colorize", from:oh-my-zsh
+# zplug "rupa/z", use:z.sh
+zplug "chrissicool/zsh-256color", from:github
+zplug "djui/alias-tips", from:github
+zplug "zlsun/solarized-man", from:github
+zplug "zsh-users/zsh-autosuggestions" # suggests commands as you type based on history and completions.
+# zplug "zsh-users/zsh-syntax-highlighting", from:github, defer:2
+zplug romkatv/powerlevel10k, as:theme, depth:1
+
+# Install plugins if there are plugins that have not been installed
+if ! zplug check --verbose; then
+	printf "Install? [y/N]: "
+	if read -r -q; then
+		echo
+		zplug install
+	fi
+fi
+
+# Then, source plugins and add commands to $PATH
+zplug load
+
+# +-----+
+# | VIM |
+# +-----+
+
+# Vi mode
+bindkey -v
+
+# edit current command line with vim (vim-mode, then v)
+autoload -Uz edit-command-line
+zle -N edit-command-line
+bindkey -M vicmd v edit-command-line
+
+source $DOTFILES/zsh/plugins/vim-mode
+# +------------+
+# | COMPLETION |
+# +------------+
+
+source $DOTFILES/zsh/completion.zsh
+
+# +-----+
+# | Git |
+# +-----+
+
+# Add command gitit to open Github repo in default browser from a local repo
+autoload -U gitit
+
+# +-----+
+# | FZF |
+# +-----+
+
+if [ $(command -v "fzf") ]; then
+	# created by executing $(brew --prefix)/opt/fzf/install, provides useful keybindings and fuzzy completion
+	[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+	source $DOTFILES/zsh/scripts_fzf.zsh # fzf Scripts
+	# Search with fzf and open selected file with Vim
+	# bindkey -s '^v' 'vim $(fzf);^M'
+fi
+
+# Display all possible tmuxp session when opening terminal
+# ftmuxp
+
+# +------------+
+# | KEYSTROKES |
+# +------------+
+
+# ctrl+l used for tmux (switch pane)
+bindkey -r '^l'
+
+bindkey -r '^g'
+bindkey -r '^p'
+bindkey -r '^w'
+
+bindkey -s '^g' ' clear\n'
+bindkey -s '^p' 'fmux\n'
+bindkey -s '^w' 'fwork\n'
+
+# +------+
+# | Java |
+# +------+
+
+# Java version manager
+if which jenv >/dev/null; then eval "$(jenv init -)"; fi
+
+# +---------------------+
+# | SYNTAX HIGHLIGHTING |
+# +---------------------+
+
+source $DOTFILES/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# +--------+
+# | PROMPT |
+# +--------+
+
+# To customize prompt, run `p10k configure` or edit ~/.zsh/.p10k.zsh.
+[[ ! -f ~/.zsh/.p10k.zsh ]] || source ~/.zsh/.p10k.zsh
+
+# https://formulae.brew.sh/formula/z
+source /usr/local/etc/profile.d/z.sh
+
+# https://formulae.brew.sh/formula/zsh-history-substring-search#default
+source /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+# create key bindings for zsh-history-substring-search
+bindkey '^[[A' history-substring-search-up 		# UP
+bindkey '^[[B' history-substring-search-down 	# DOWN
