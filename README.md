@@ -10,17 +10,17 @@ Features:
 -   `Tmux` - as terminal multiplexer
 -   `zsh` - as shell
 -   `Powerlevel10k` - as zsh prompt
--   `n` as node version manager
--   `jenv` as Java version manager
+-   `n` - as node version manager
+-   `jenv` - as Java version manager
 -   custom git configuration
 -   a bunch of useful aliases
 -   a bunch of useful scripts
 
 Stuff I'm planning on adding and improving in the future:
 
--   tmuxp as tmux session manager
--   further tmux improvements
--   nvim configuration improvements and fixes (some stuff is not working great)
+-   `tmuxp` as tmux session manager
+-   further `tmux` improvements
+-   `neovim` configuration improvements and fixes (some stuff is not working great)
 -   improve font installation
 -   improve ssh and gnupg migration process
 
@@ -28,6 +28,6 @@ Stuff I'm planning on adding and improving in the future:
 
 ## Installation
 
-Just run `install.sh` and follow the installation process, you'll need to enter your sudo password in order to install some packages .
+Just run `install.sh` and follow the installation process, you'll need to enter your sudo password in order to install some packages.
 
-> Note: Installation is a pretty verbose, as I've wanted everything logged toterminal. You can clean output a bit bu removing verbose flag from creating symlinks if you wish.
+> Note: Installation is a pretty verbose, as I've wanted each step logged to terminal. You can clean output a bit bu removing verbose flag from creating symlinks if you wish.
