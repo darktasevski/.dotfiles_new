@@ -231,9 +231,6 @@ iabbrev <expr> cdate strftime('%Y-%m-%d') "current date
 " | Set  options |
 " +--------------+
 
-" colorscheme
-colorscheme hypnos
-
 " no swap file
 set noswapfile
 " set the directory where the swap file will be saved
@@ -313,6 +310,7 @@ set guifont=PragmataPro:h14
   set termguicolors
  endif
 
+" colorscheme
 colorscheme OceanicNext
 
 " relative / hybrid line number switch
