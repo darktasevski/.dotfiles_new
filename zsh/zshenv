@@ -63,6 +63,8 @@ TIZEN_STUFF_PATH=${HOME}/Tizen/SDK/tools/ide/bin:${HOME}/Tizen/SDK/tools:${HOME}
 RBENV_PATH=$HOME/.rbenv/bin
 RUBY_GEMS=/usr/local/lib/ruby/gems/2.7.0/bin
 
+export NPM_PATH=$HOME/.n/bin
+
 # Java
 export MAVEN_HOME=/usr/local/Cellar/maven/3.8.1
 JENV_PATH="$HOME/.jenv/bin:$PATH"

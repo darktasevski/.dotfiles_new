@@ -259,22 +259,6 @@ calcul() {
 	bc -l <<<"$@"
 }
 
-##########
-# Colors #
-##########
-
-colorblocks() {
-	$DOTFILES/bash/scripts/colorblocks.sh
-}
-
-colorcards() {
-	$DOTFILES/bash/scripts/colorcards.sh
-}
-
-colors() {
-	$DOTFILES/bash/scripts/colors.sh
-}
-
 ########
 # Find #
 ########
