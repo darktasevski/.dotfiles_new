@@ -70,3 +70,5 @@ ln -sfv "$DOTFILES/nvim/thesaurus" "$VIMCONFIG"
 
 # spell files
 ln -sfv "$DOTFILES/nvim/spell" "$VIMCONFIG"
+
+# NOTE: pip neovim module might be needed since we're installing neovim via brew, and some of plugins require python bindings
