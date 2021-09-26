@@ -26,4 +26,4 @@ ln -sfv "$DOTFILES"/git/gitignore_global "$HOME"/.gitignore_global
 ln -sfv "$DOTFILES"/git/gitattributes_global "$HOME"/.gitattributes_global
 
 # Set the global hooks
-git config --global init.templatedir "$DOTFILES/git/templates"
+# git config --global init.templatedir "$DOTFILES/git/templates"
