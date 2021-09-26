@@ -1,0 +1,2033 @@
+{
+	"consoleAssert": {
+		"prefix": "clas",
+		"body": "console.assert(${1:expression}, ${2:object})",
+		"description": "If the specified expression is false, the message is written to the console along with a stack trace"
+	},
+	"consoleClear": {
+		"prefix": "clcl",
+		"body": "console.clear()",
+		"description": "Clears the console"
+	},
+	"consoleCount": {
+		"prefix": "clco",
+		"body": "console.count(${1:label})",
+		"description": "Writes the the number of times that count() has been invoked at the same line and with the same label"
+	},
+	"consoleDir": {
+		"prefix": "cld",
+		"body": "console.dir(${1:object})",
+		"description": "Prints a JavaScript representation of the specified object"
+	},
+	"consoleError": {
+		"prefix": "cle",
+		"body": "console.error(${1:object})",
+		"description": "Displays a message in the console and also includes a stack trace from where the method was called"
+	},
+	"consoleGroup": {
+		"prefix": "clgr",
+		"body": "console.group(\"${1:label}\")",
+		"description": "Groups and indents all following output by an additional level, until console.groupEnd() is called."
+	},
+	"consoleGroupEnd": {
+		"prefix": "clge",
+		"body": "console.groupEnd()",
+		"description": "Closes out the corresponding console.group()."
+	},
+	"consoleLog": {
+		"prefix": "clg",
+		"body": "console.log(${1:object})",
+		"description": "Displays a message in the console"
+	},
+	"consoleTrace": {
+		"prefix": "clr",
+		"body": "console.trace(${1:object})",
+		"description": "Prints a stack trace from the point where the method was called"
+	},
+	"consoleWarn": {
+		"prefix": "clw",
+		"body": "console.warn(${1:object})",
+		"description": "Displays a message in the console but also displays a yellow warning icon along with the logged message"
+	},
+	"consoleInfo": {
+		"prefix": "clin",
+		"body": "console.info(${1:object})",
+		"description": "Displays a message in the console but also displays a blue information icon along with the logged message"
+	},
+	"consoleTable": {
+		"prefix": "clt",
+		"body": "console.table(${1:object});",
+		"description": "Displays tabular data as a table."
+	},
+	"alert": {
+		"prefix": "alert",
+		"body": ["alert('${1:msg}');"],
+		"description": "Code snippet for 'alert'"
+	},
+	"confirm": {
+		"prefix": "confirm",
+		"body": ["confirm('${1:msg}');"],
+		"description": "Code snippet for 'confirm'"
+	},
+	"prompt": {
+		"prefix": "prompt",
+		"body": ["prompt('${1:msg}');"],
+		"description": "Code snippet for 'prompt'"
+	},
+	"map": {
+		"prefix": "mapfn",
+		"body": "${1:iterable}.map((${2:item}) => {\n\t${0}\n})",
+		"description": "Map method"
+	},
+	"map function with ES5 syntax": {
+		"prefix": "mapfn5",
+		"body": "${1:iterable}.map(${2:iterator})",
+		"description": "map ES5"
+	},
+	"chainMap function": {
+		"prefix": "chain-map",
+		"body": ".map(${1:iterator})",
+		"description": "chain map"
+	},
+	"reduce": {
+		"prefix": "reduce",
+		"body": "${1:iterable}.reduce((${2:previous}, ${3:current}) => {\n\t${0}\n}${4:, initial})",
+		"description": "Reduce method"
+	},
+	"chainReduce function": {
+		"prefix": "chain-reduce",
+		"body": ".reduce((${1:previous}, ${2:current}) => {\n  ${0}\n}${3:, initial})",
+		"description": "chain reduce"
+	},
+	"filter": {
+		"prefix": "filter",
+		"body": "${1:iterable}.filter((${2:item}) => {\n\t${0}\n})",
+		"description": "Filter method"
+	},
+	"filter function in ES5 syntax": {
+		"prefix": "filter5",
+		"body": "${1:iterable}.filter(${2:iterator})",
+		"description": "filter"
+	},
+	"chainFilter function": {
+		"prefix": "chain-filter",
+		"body": ".filter(${1:iterator})",
+		"description": "chain filter"
+	},
+	"find": {
+		"prefix": "find",
+		"body": "${1:iterable}.find((${2:item}) => {\n\t${0}\n})",
+		"description": "Find method"
+	},
+	"find function with ES5": {
+		"prefix": "find5",
+		"body": "${1:iterable}.find(${2:iterator})",
+		"description": "find"
+	},
+	"chainFind function": {
+		"prefix": "chain-find",
+		"body": ".find(${1:iterator})",
+		"description": "chain find"
+	},
+	"every": {
+		"prefix": "every",
+		"body": "${1:iterable}.every((${2:item}) => {\n\t${0}\n})",
+		"description": "Every method"
+	},
+	"everyES5": {
+		"prefix": "every5",
+		"body": "${1:iterable}.every(${2:iterator})",
+		"description": "every"
+	},
+	"chainEvery function": {
+		"prefix": "chain-every",
+		"body": ".every(${1:iterator})",
+		"description": "chain every"
+	},
+	"some": {
+		"prefix": "some",
+		"body": "${1:iterable}.some((${2:item}) => {\n\t${0}\n})",
+		"description": "Some method"
+	},
+	"someES5": {
+		"prefix": "some5",
+		"body": "${1:iterable}.some(${2:iterator})",
+		"description": "some"
+	},
+	"chainSome function": {
+		"prefix": "chain-some",
+		"body": ".some(${1:iterator})",
+		"description": "chain some"
+	},
+	"arrayIsArray": {
+		"prefix": "isarr",
+		"body": "Array.isArray(${1:source})",
+		"description": "Array.isArray()"
+	},
+	"chainForEach function": {
+		"prefix": "chain-foreach",
+		"body": ".forEach(${1:iterator})",
+		"description": "chain forEach"
+	},
+	"FindIndex with arrow function": {
+		"prefix": "findindex",
+		"body": ["${1:index}.findIndex((${2:index}) => {})"],
+		"description": "FindIndex function with arrow function inside"
+	},
+	"Concat function": {
+		"prefix": "conc",
+		"body": ["${1:index}.concat(${2:index})"],
+		"description": "Standard concat function"
+	},
+	"split function": {
+		"prefix": "split",
+		"body": ["${1:index}.split(${2:index})"],
+		"description": "Standard split function"
+	},
+	"slice function": {
+		"prefix": "slice",
+		"body": ["${1:index}.slice(${2:index})"],
+		"description": "Standard slice function"
+	},
+	"on event handler": {
+		"prefix": "onevent",
+		"body": "${1:emitter}.on('${2:event}', (${3:arguments}) => {\n\t${0}\n});"
+	},
+	"dom event cancel default and propagation": {
+		"prefix": "prevent",
+		"body": "e.preventDefault()\ne.stopPropagation()\nreturn false",
+		"description": "dom event cancel default and propagation"
+	},
+	"add Event Listener": {
+		"prefix": "addevent",
+		"body": "${1:document}.addEventListener('${2:event}', ${3:ev} => {\n\t${0}\n})",
+		"description": "Add event listener ES6"
+	},
+	"remove Event Listener": {
+		"prefix": "remevent",
+		"body": "${1:document}.removeEventListener('${2:event}', ${3:listener})",
+		"description": "Remove event listener ES6"
+	},
+	"append Child": {
+		"prefix": "appchild",
+		"body": ["${1:document}.appendChild(${2:elem});"],
+		"description": "Code snippet for \"appendChild\""
+	},
+	"remove Child": {
+		"prefix": "remchild",
+		"body": ["${1:document}.removeChild(${2:elem});"],
+		"description": "Code snippet for \"removeChild\""
+	},
+	"create Element": {
+		"prefix": "crateelement",
+		"body": ["${1:document}.createElement(${2:elem});"],
+		"description": "Code snippet for \"createElement\""
+	},
+	"create Document Fragment": {
+		"prefix": "createdocfragment",
+		"body": ["${1:document}.createDocumentFragment();$2"],
+		"description": "Code snippet for \"createDocumentFragment\""
+	},
+	"classList.add": {
+		"prefix": "classadd",
+		"body": ["${1:document}.classList.add('${2:class}');"],
+		"description": "Code snippet for \"classList.add\""
+	},
+	"classList.toggle": {
+		"prefix": "classtoggle",
+		"body": ["${1:document}.classList.toggle('${2:class}');"],
+		"description": "Code snippet for \"classList.toggle\""
+	},
+	"classList.remove": {
+		"prefix": "classremove",
+		"body": ["${1:document}.classList.remove('${2:class}');"],
+		"description": "Code snippet for \"classList.remove\""
+	},
+	"getElementById": {
+		"prefix": "getId",
+		"body": ["${1:document}.getElementById('${2:id}');"],
+		"description": "Code snippet for \"getElementById\""
+	},
+	"getElementsByClassName": {
+		"prefix": "getClass",
+		"body": ["${1:document}.getElementsByClassName('${2:class}');"],
+		"description": "Code snippet for \"getElementsByClassName\""
+	},
+	"getElementsByTagName": {
+		"prefix": "getTag",
+		"body": ["${1:document}.getElementsByTagName('${2:tag}');"],
+		"description": "Code snippet for \"getElementsByTagName\""
+	},
+	"getAttribute": {
+		"prefix": "getAtt",
+		"body": ["${1:document}.getAttribute('${2:attr}');"],
+		"description": "Code snippet for \"getAttribute\""
+	},
+	"setAttribute": {
+		"prefix": "setAtt",
+		"body": ["${1:document}.setAttribute('${2:attr}', ${3:value});"],
+		"description": "Code snippet for \"setAttribute\""
+	},
+	"removeAttribute": {
+		"prefix": "remAtt",
+		"body": ["${1:document}.removeAttribute('${2:attr}');"],
+		"description": "Code snippet for \"removeAttribute\""
+	},
+	"innerHTML": {
+		"prefix": "innerHtml",
+		"body": ["${1:document}.innerHTML = '${2:elem}';"],
+		"description": "Code snippet for \"innerHTML\""
+	},
+	"textContent": {
+		"prefix": "textCon",
+		"body": ["${1:document}.textContent = '${2:content}';"],
+		"description": "Code snippet for \"textContent\""
+	},
+	"querySelector": {
+		"prefix": "qs",
+		"body": ["${1:document}.querySelector('${2:selector}');"],
+		"description": "Code snippet for \"querySelector\""
+	},
+	"querySelectorAll": {
+		"prefix": "qsall",
+		"body": ["${1:document}.querySelectorAll('${2:selector}');"],
+		"description": "Code snippet for \"querySelectorAll\""
+	},
+	"typeof": {
+		"prefix": "typeof",
+		"body": "typeof ${1:source} === '${2:undefined}'"
+	},
+	"typeofEqualTo": {
+		"prefix": "typeofeq",
+		"body": "typeof ${1:source} === '${2:value}'",
+		"description": "typeof equal to"
+	},
+	"typeofNotEqualTo": {
+		"prefix": "typeofineq",
+		"body": "typeof ${1:source} !== '${2:value}'",
+		"description": "typeof not equal to"
+	},
+	"instanceof": {
+		"prefix": "iof",
+		"body": "${1:source} instanceof ${2:Object}"
+	},
+	"JSON.parse": {
+		"prefix": "jsp",
+		"body": ["JSON.parse(${1:obj});"],
+		"description": "Code snippet for 'JSON.parse'"
+	},
+	"JSON.stringify": {
+		"prefix": "jss",
+		"body": ["JSON.stringify(${1:obj});"],
+		"description": "Code snippet for 'JSON.stringify'"
+	},
+	"jsonKey/valuePair": {
+		"prefix": "jskv",
+		"body": "\"${1:key}\": \"${2:value}\"",
+		"description": "JSON key/value pair"
+	},
+	"jsonArray": {
+		"prefix": "jsar",
+		"body": "\"${1:key}\": [\"${2:values}\"]",
+		"description": "JSON array"
+	},
+	"prototype": {
+		"prefix": "proto",
+		"body": [
+			"${1:object}.prototype.${2:method} = function(${3:arguments}) {",
+			"\t${4:// body}",
+			"}"
+		],
+		"description": "Code snippet for prototype"
+	},
+	"prototype method": {
+		"prefix": "proto1",
+		"body": "${1:Class}.prototype.${2:method} = function (${3:arguments}) {\n\t${0}\n}",
+		"description": "Code snippet for prototype"
+	},
+	"prototypeMethod": {
+		"prefix": "proto",
+		"body": "${1:ClassName}.prototype.${2:key} = ${3:value}",
+		"description": "prototype method"
+	},
+	"chainPrototypeMethod": {
+		"prefix": "chain-proto",
+		"body": ".prototype.${2:key} = ${3:value}",
+		"description": "chain prototype method"
+	},
+	"return": {
+		"prefix": "r",
+		"body": "return ${0}"
+	},
+	"return this": {
+		"prefix": "rt",
+		"body": "return this"
+	},
+	"return null": {
+		"prefix": "rn",
+		"body": "return null"
+	},
+	"returnTrue": {
+		"prefix": "rt",
+		"body": "return true",
+		"description": "return true"
+	},
+	"returnFalse": {
+		"prefix": "rf",
+		"body": "return false",
+		"description": "return false"
+	},
+	"return new object": {
+		"prefix": "ro",
+		"body": "return {\n\t${0}\n}"
+	},
+	"return new array": {
+		"prefix": "ra",
+		"body": "return [\n\t${0}\n]"
+	},
+	"return complex value (such as JSX components)": {
+		"prefix": "rjsx",
+		"body": "return (\n\t${0}\n);",
+		"description": "return complex value (such as JSX components)"
+	},
+	"symbol": {
+		"prefix": "Sy",
+		"body": "Symbol('${1:name}')",
+		"description": "Symbol"
+	},
+	"forEach ES7": {
+		"prefix": "foreach->",
+		"body": ["${1:array}.forEach(${2:currentItem} => {", "  ${0}", "})", ""],
+		"description": "Creates a forEach statement in ES7 syntax"
+	},
+	"forEach": {
+		"prefix": "foreach",
+		"body": ["${1:array}.forEach(function(item) {", "\t${2:// body}", "});"],
+		"description": " ES5 Code snippet for \"forEach\""
+	},
+	"forOf": {
+		"prefix": "forof",
+		"body": ["for(let ${1:item} of ${2:object}) {", "  ${0}", "}", ""],
+		"description": "Iterating over property names of iterable objects"
+	},
+	"for In": {
+		"prefix": "forin",
+		"body": ["for(let ${1:item} in ${2:object}) {", "  ${0}", "}", ""],
+		"description": "Iterating over property values of iterable objects"
+	},
+	"for loop": {
+		"prefix": "for",
+		"body": "for (let ${1:i} = 0, ${2:len} = ${3:iterable}.length; ${1:i} < ${2:len}; ${1:i}++) {\n\t${0}\n}"
+	},
+	"reverse for loop": {
+		"prefix": "for-reverse",
+		"body": "for (let ${1:i} = ${2:iterable}.length - 1; ${1:i} >= 0; ${1:i}--) {\n\t${0}\n}",
+		"description": "reverse for loop"
+	},
+	"for in loop": {
+		"prefix": "forin2",
+		"body": "for (let ${1:key} in ${2:source}) {\n\tif (${2:source}.hasOwnProperty(${1:key})) {\n\t\t${0}\n\t}\n}"
+	},
+	"for of loop": {
+		"prefix": "forof2",
+		"body": "for (let ${1:key} of ${2:source}) {\n\t${0}\n}"
+	},
+	"while iteration decrementing": {
+		"prefix": "whiled",
+		"body": "let ${1:array}Index = ${1:array}.length\nwhile (${1:array}Index--) {\n\t${0}\n}"
+	},
+	"while loop": {
+		"prefix": "while",
+		"body": "while (${1:condition}) {\n\t${0}\n}"
+	},
+	"fastWhileLoop": {
+		"prefix": "whilefast",
+		"body": "let len = ${1:iterable}.length\nlet i = 0\n\nwhile (i < len) {\n  let val = ${1:iterable}[${2:i++}]\n  ${0}\n}",
+		"description": "fast while loop"
+	},
+	"anonymousFunction": {
+		"prefix": "fna",
+		"body": ["(${1:params}) => {", "  ${2}", "}", ""],
+		"description": "Creates an anonymous function in ES7 syntax"
+	},
+	"namedFunction": {
+		"prefix": "fn",
+		"body": ["const ${1:name} = (${2:params}) => {", "  ${3}", "}", ""],
+		"description": "Creates a named function in ES7 syntax"
+	},
+	"anonymous function": {
+		"prefix": "func",
+		"body": "function (${1:arguments}) {${0}}",
+		"description": "Creates an anonymous function in ES5 syntax"
+	},
+	"named function": {
+		"prefix": "function",
+		"body": "function ${1:name} (${2:arguments}) {\n\t${0}\n}",
+		"description": "Creates a named function in ES5 syntax"
+	},
+	"arrow function": {
+		"prefix": "fn->",
+		"body": "(${1:arguments}) => ${2:statement}"
+	},
+	"arrow function with body": {
+		"prefix": "fn->b",
+		"body": "(${1:arguments}) => {\n\t${0}\n}"
+	},
+	"async function": {
+		"prefix": "fnasync",
+		"body": "async function (${1:arguments}) {\n\t${0}\n}",
+		"description": "Creates a async function"
+	},
+	"async arrow function": {
+		"prefix": "fnasync->",
+		"body": "async (${1:arguments}) => {\n\t${0}\n}",
+		"description": "Creates a async arrow function"
+	},
+	"immediately-invoked function expression": {
+		"prefix": "iife",
+		"body": [
+			"(function(${1:window}, ${2:document}) {",
+			"\t${3:// body}",
+			"})(${1:window}, ${2:document});"
+		],
+		"description": "Code snippet for immediately-invoked function expression"
+	},
+	"function call": {
+		"prefix": "call",
+		"body": ["${1:method}.call(${2:context}, ${3:arguments});"],
+		"description": "Code snippet for function call"
+	},
+	"function apply": {
+		"prefix": "apply",
+		"body": ["${1:method}.apply(${2:context}, [${3:arguments}]);"],
+		"description": "Code snippet for function apply"
+	},
+	"function bind": {
+		"prefix": "fnbind",
+		"body": "${1:fn}.bind(${2:this}, ${3:arguments})"
+	},
+	"generator function": {
+		"prefix": "fngen",
+		"body": "function* (${1:arguments}) {\n\t${0}\n}"
+	},
+	"namedGenerator": {
+		"prefix": "fngenn",
+		"body": "function * ${1:name} (${2:args}) {${0}}",
+		"description": "named generator"
+	},
+	"function as a property of an object": {
+		"prefix": "fnobj",
+		"body": ["${1:functionName}: function(${2:arguments}) {", "\t${3:// body}", "}"],
+		"description": "ES5 Code snippet for function as a property of an object"
+	},
+	"chainOnce": {
+		"prefix": "chain-once",
+		"body": ".once('${1:event}', ${2:handler})",
+		"description": "chain .once"
+	},
+	"onEventHandler": {
+		"prefix": "on",
+		"body": "${1:emitter}.on('${2:event}', ${3:args})",
+		"description": "on event handler"
+	},
+	"chainOn": {
+		"prefix": "chain-on",
+		"body": ".on('${1:event}', ${2:handler})",
+		"description": "chain .on"
+	},
+	"onceEventHandler": {
+		"prefix": "once",
+		"body": "${1:emitter}.once('${2:event}', ${3:args})",
+		"description": "once event handler"
+	},
+	"emitEvent": {
+		"prefix": "emit",
+		"body": "${1:emitter}.emit('${2:event}', ${3:args})",
+		"description": "emit event"
+	},
+	"chainEmit": {
+		"prefix": "chain-emit",
+		"body": ".emit('${1:event}', ${2:args})",
+		"description": "chain .emit"
+	},
+	"destructingObject": {
+		"prefix": "desObj",
+		"body": "const {${1:propertyName}} = ${2:objectToDestruct}",
+		"description": "Creates and assigns a local variable using object destructing"
+	},
+	"destructingArray": {
+		"prefix": "desArr",
+		"body": "const [${1:propertyName}] = ${2:arrayToDestruct}",
+		"description": "Creates and assigns a local variable using array destructing"
+	},
+	"setInterval": {
+		"prefix": "sti->",
+		"body": ["setInterval(() => {", "  ${2}", "}, ${0:intervalInms})", ""],
+		"description": "Executes the given function at specified intervals in ES7 syntax"
+	},
+	"setTimeOut": {
+		"prefix": "sto->",
+		"body": ["setTimeout(() => {", "  ${2}", "}, ${1:delayInms})", ""],
+		"description": "Executes the given function after the specified delay in ES7 syntax"
+	},
+	"processNextTick": {
+		"prefix": "nt",
+		"body": "process.nextTick(() => {\n  ${0}\n}${1:, args})",
+		"description": "process.nextTick"
+	},
+	"promise": {
+		"prefix": "promise-rnew",
+		"body": "return new Promise((resolve, reject) => {\n\t${1}\n});",
+		"description": "Creates and returns a new Promise in the standard ES6 syntax"
+	},
+	"Promise.all": {
+		"prefix": "promise-all",
+		"body": "Promise.all([${1:value}])",
+		"description": "Promise all"
+	},
+	"Promise.resolve": {
+		"prefix": "prom-resolve",
+		"body": "Promise.resolve(${1:value})",
+		"description": "Promise resolve"
+	},
+	"Promise.reject": {
+		"prefix": "prom-reject",
+		"body": "Promise.reject(${1:value})",
+		"description": "Promise reject"
+	},
+	"new Promise": {
+		"prefix": "prom-new",
+		"body": "new Promise((resolve, reject) => {\n\t${0}\n})",
+		"description": "Shiny new Promise"
+	},
+	"Promise.then": {
+		"prefix": "promise-then",
+		"body": "${1:promise}.then((${2:value}) => {\n\t${0}\n})",
+		"description": "Promise with Then"
+	},
+	"Promise.catch": {
+		"prefix": "promise-catch",
+		"body": "${1:promise}.catch(error => {\n\t${0}\n})",
+		"description": "Promise with Catch"
+	},
+	"chainThen": {
+		"prefix": "chain-then",
+		"body": ".then((${1:value}) => {${0}})",
+		"description": "chain then"
+	},
+	"promiseCatch": {
+		"prefix": "promise-catch1",
+		"body": "${1:promise}.catch((${2:err}) => {${0}})",
+		"description": "Promise.catch"
+	},
+	"chainCatch": {
+		"prefix": "chain-catch",
+		"body": ".catch((${1:err}) => {${0}})",
+		"description": "chain catch"
+	},
+	"named generator": {
+		"prefix": "fngenn1",
+		"body": "function* ${1:name}(${2:arguments}) {\n\t${0}\n}"
+	},
+	"await": {
+		"prefix": "await",
+		"body": "await ${0}"
+	},
+	"await Promise.all": {
+		"prefix": "awaitPrAll",
+		"body": "await Promise.all(${1:value})",
+		"description": "await Promise.all"
+	},
+	"await Promise.all map": {
+		"prefix": "awaitPrAllmap",
+		"body": "await Promise.all(${1:array}.map((${2:value}) => {\n\t${0}\n}))",
+		"description": "await Promise.all with map"
+	},
+	"import": {
+		"prefix": "import",
+		"body": "import ${2:moduleName} from '${1:module}'$0",
+		"description": "import ${2:moduleName} from '${1:module}'$0"
+	},
+	"importNoModuleName": {
+		"prefix": "import-raw",
+		"body": "import '${1:module}'$0",
+		"description": "import without module name"
+	},
+	"importDestructing": {
+		"prefix": "import-dest",
+		"body": "import { $2 } from '${1:module}'$0",
+		"description": "import { $2 } from '${1:module}"
+	},
+	"importEverything": {
+		"prefix": "import-*as",
+		"body": "import * as ${2:alias} from '${1:module}'$0",
+		"description": "import * as ${2:alias} from '${1:module}'$0"
+	},
+	"importAs": {
+		"prefix": "import-as",
+		"body": "import { ${2:originalName} as ${3:alias} } from '${1:module}'$0",
+		"description": "import as"
+	},
+	"exportDefault": {
+		"prefix": "export",
+		"body": "export default $1$0",
+		"description": "export default"
+	},
+	"exportDestructing": {
+		"prefix": "export-des",
+		"body": "export { $2 } from '${1:module}'$0",
+		"description": "export with destructuring"
+	},
+	"exportAs": {
+		"prefix": "export-as",
+		"body": "export { ${2:originalName} as ${3:alias} } from '${1:module}'$0",
+		"description": "export as {alias} from module"
+	},
+	"exportNamedFunction": {
+		"prefix": "export-namedfn",
+		"body": ["export const ${1:functionName} = (${2:params}) => {", "  $0", "}", ""],
+		"description": "Export named function in ES7 syntax"
+	},
+	"exportDefaultFunction": {
+		"prefix": "export-deffn",
+		"body": ["export default (${1:params}) => {", "  $0", "}", ""],
+		"description": "Export default function in ES7 syntax"
+	},
+	"let and if statement": {
+		"prefix": "letif",
+		"body": "let ${0} \n if (${2:condition}) {\n\t${1}\n}"
+	},
+	"else if statement": {
+		"prefix": "elif",
+		"body": "else if (${1:condition}) {\n\t${0}\n}"
+	},
+	"switch case": {
+		"prefix": "switch",
+		"body": "switch (${1:expr}) {\n\tcase ${2:value}:\n\t\treturn $0;\n\tdefault:\n\t\treturn;\n}",
+		"description": "switch case"
+	},
+	"ternary operator": {
+		"prefix": "tern",
+		"body": "${1:condition} ? ${2:expression} : ${3:expression};",
+		"description": "ternary operator"
+	},
+	"constructor": {
+		"prefix": "class-cons1",
+		"body": "constructor () {\n\t${0}\n}"
+	},
+	"classConstructorContext": {
+		"prefix": "const-ctx",
+		"body": "constructor(props, context) {\n\tsuper(props, context);\n\t$0\n}\n",
+		"description": "Adds a default constructor for the class that contains props and context as arguments"
+	},
+	"getter": {
+		"prefix": "get",
+		"body": "get ${1:property} () {\n\t${0}\n}"
+	},
+	"setter": {
+		"prefix": "set",
+		"body": "set ${1:property} (${2:value}) {\n\t${0}\n}"
+	},
+	"getter + setter": {
+		"prefix": "getset",
+		"body": "get ${1:property} () {\n\t${0}\n}\nset ${1:property} (${2:value}) {\n\t\n}"
+	},
+	"class": {
+		"prefix": "class",
+		"body": "class ${1:name} {\n\tconstructor (${2:arguments}) {\n\t\t${0}\n\t}\n}"
+	},
+	"class extends": {
+		"prefix": "classx",
+		"body": "class ${1:name} extends ${2:base} {\n\tconstructor (${3:arguments}) {\n\t\tsuper(${3:arguments})\n\t\t${0}\n\t}\n}"
+	},
+	"Class bindThis": {
+		"prefix": "bind-method",
+		"body": "this.$1 = this.$1.bind(this);$0",
+		"description": "Binds the this of a method. To be used inside a class constructor"
+	},
+	"Class method": {
+		"prefix": "method",
+		"body": "${1:method} (${2:arguments}) {\n\t${0}\n}",
+		"description": "Creates a method inside a class in ES7 syntax"
+	},
+	"Class property Get": {
+		"prefix": "propget",
+		"body": ["get ${1:propertyName} = () => {", "  return this.${0}", "}", ""],
+		"description": "Creates a getter property inside a class in ES7 syntax"
+	},
+	"Class property set": {
+		"prefix": "propset",
+		"body": ["set ${1:propertyName} = (${2:value}) => {", "  ${0}", "}", ""],
+		"description": "Creates a setter property inside a class in ES7 syntax"
+	},
+	"jsx element": {
+		"prefix": "jsx",
+		"body": "<${1:elementName}>\n\t$0\n</${1:elementName}>",
+		"description": "an element"
+	},
+	"jsx element self closed": {
+		"prefix": "jsxc",
+		"body": "<${1:elementName} />",
+		"description": "an element self closed"
+	},
+	"import React": {
+		"prefix": "imr",
+		"body": ["import React from 'react'", ""],
+		"description": "import React from 'react'"
+	},
+	"import React, { Component }": {
+		"prefix": "imr-c",
+		"body": ["import React, { Component } from 'react'", ""],
+		"description": "import React and {Component} from 'react'"
+	},
+	"import React, { Component } & PropTypes": {
+		"prefix": "imr-cpt",
+		"body": [
+			"import React, { Component } from 'react'",
+			"import PropTypes from 'prop-types'",
+			""
+		],
+		"description": "import React and {Component} and PropTypes from 'react'"
+	},
+	"import React, { PureComponent }": {
+		"prefix": "imr-pc",
+		"body": ["import React, { PureComponent } from 'react'", ""],
+		"description": "import React and {PureComponent} and PropTypes from 'react'"
+	},
+	"import React, { PureComponent } & PropTypes": {
+		"prefix": "imr-pcpt",
+		"body": [
+			"import React, { PureComponent } from 'react'",
+			"import PropTypes from 'prop-types'",
+			""
+		],
+		"description": "import React and {PureComponent} and PropTypes from 'react'"
+	},
+	"reactClassCompoment": {
+		"prefix": "rc-c",
+		"body": [
+			"import React, { Component } from 'react'",
+			"",
+			"export default class ${1:componentName} extends Component {",
+			"  render() {",
+			"    return (",
+			"      <div>",
+			"        $0",
+			"      </div>",
+			"    )",
+			"  }",
+			"}",
+			""
+		],
+		"description": "Creates a React component class with ES7 module system"
+	},
+	"reactClassExportComponent": {
+		"prefix": "rc-cx",
+		"body": [
+			"import React, { Component } from 'react'",
+			"",
+			"export class ${1:componentName} extends Component {",
+			"  render() {",
+			"    return (",
+			"      <div>",
+			"        $0",
+			"      </div>",
+			"    )",
+			"  }",
+			"}",
+			"",
+			"export default ${1:componentName}",
+			""
+		],
+		"description": "Creates a React component class with ES7 module system"
+	},
+	"reactClassComponentWithMethods": {
+		"prefix": "rc-full",
+		"body": "import React, { Component } from 'react';\nimport PropTypes from 'prop-types';\n\nclass ${1:componentName} extends Component {\n\tconstructor(props) {\n\t\tsuper(props);\n\n\t}\n\n\tcomponentWillMount() {\n\n\t}\n\n\tcomponentDidMount() {\n\n\t}\n\n\tcomponentWillReceiveProps(nextProps) {\n\n\t}\n\n\tshouldComponentUpdate(nextProps, nextState) {\n\n\t}\n\n\tcomponentWillUpdate(nextProps, nextState) {\n\n\t}\n\n\tcomponentDidUpdate(prevProps, prevState) {\n\n\t}\n\n\tcomponentWillUnmount() {\n\n\t}\n\n\trender() {\n\t\treturn (\n\t\t\t<div>\n\n\t\t\t</div>\n\t\t);\n\t}\n}\n\n${1:componentName}.propTypes = {\n\n};\n\nexport default ${1:componentName};",
+		"description": "Creates a React component class with PropTypes and all lifecycle methods and ES6 module system"
+	},
+	"reactStateless": {
+		"prefix": "rc-st",
+		"body": "import React from 'react';\n\nconst ${1:componentName} = () => {\n\treturn (\n\t\t<div>\n\t\t\t$0\n\t\t</div>\n\t);\n};\n\nexport default ${1:componentName};",
+		"description": "Creates a stateless React component without PropTypes and ES6 module system"
+	},
+	"reactStatelessProps": {
+		"prefix": "rc-stf",
+		"body": "import React from 'react';\nimport PropTypes from 'prop-types';\n\nconst ${1:componentName} = props => {\n\treturn (\n\t\t<div>\n\t\t\t\n\t\t</div>\n\t);\n};\n\n${1:componentName}.propTypes = {\n\t$0\n};\n\nexport default ${1:componentName};",
+		"description": "Creates a stateless React component with PropTypes and ES6 module system"
+	},
+	"reactClassExportComponentWithPropTypes": {
+		"prefix": "rc-cpt",
+		"body": [
+			"import React, { Component } from 'react'",
+			"import PropTypes from 'prop-types'",
+			"",
+			"export class ${1:componentName} extends Component {",
+			"  static propTypes = {",
+			"",
+			"  }",
+			"",
+			"  render() {",
+			"    return (",
+			"      <div>",
+			"        $0",
+			"      </div>",
+			"    )",
+			"  }",
+			"}",
+			"",
+			"export default ${1:componentName}",
+			""
+		],
+		"description": "Creates a React component class with ES7 module system"
+	},
+	"reactClassPureComponent": {
+		"prefix": "rc-pc",
+		"body": [
+			"import React, { PureComponent } from 'react'",
+			"",
+			"export default class ${1:componentName} extends PureComponent {",
+			"  render() {",
+			"    return (",
+			"      <div>",
+			"        $0",
+			"      </div>",
+			"    )",
+			"  }",
+			"}",
+			""
+		],
+		"description": "Creates a React component class with ES7 module system"
+	},
+	"reactClassPureComponentWithPropTypes": {
+		"prefix": "rc-pcpt",
+		"body": [
+			"import React, { PureComponent } from 'react'",
+			"import PropTypes from 'prop-types'",
+			"",
+			"export default class ${1:componentName} extends PureComponent {",
+			"  static propTypes = {",
+			"",
+			"  }",
+			"",
+			"  render() {",
+			"    return (",
+			"      <div>",
+			"        $0",
+			"      </div>",
+			"    )",
+			"  }",
+			"}",
+			""
+		],
+		"description": "Creates a React component class with ES7 module system"
+	},
+	"reactClassCompomentPropTypes": {
+		"prefix": "rc-cpt",
+		"body": [
+			"import React, { Component } from 'react'",
+			"import PropTypes from 'prop-types'",
+			"",
+			"export default class ${1:componentName} extends Component {",
+			"  static propTypes = {",
+			"    ${2:prop}: ${3:PropTypes}",
+			"  }",
+			"",
+			"  render() {",
+			"    return (",
+			"      <div>",
+			"        $0",
+			"      </div>",
+			"    )",
+			"  }",
+			"}",
+			""
+		],
+		"description": "Creates a React component class with PropTypes and ES7 module system"
+	},
+	"hocComponent": {
+		"prefix": "rc-high_order_component",
+		"body": [
+			"import React from 'react'",
+			"import PropTypes from 'prop-types'",
+			"",
+			"export default (WrappedComponent) => {",
+			"  const hocComponent = ({ ...props }) => <WrappedComponent {...props} />",
+			"",
+			"  hocComponent.propTypes = {",
+			"  }",
+			"",
+			"  return hocComponent",
+			"}",
+			""
+		]
+	},
+	"reactClassCompomentRedux": {
+		"prefix": "rc-redux",
+		"body": [
+			"import React, { Component } from 'react'",
+			"import PropTypes from 'prop-types'",
+			"import { connect } from 'react-redux'",
+			"",
+			"export class ${1:componentName} extends Component {",
+			"  static propTypes = {",
+			"    ${2:prop}: ${3:PropTypes}",
+			"  }",
+			"",
+			"  render() {",
+			"    return (",
+			"      <div>",
+			"        $0",
+			"      </div>",
+			"    )",
+			"  }",
+			"}",
+			"",
+			"const mapStateToProps = (state) => ({",
+			"  ",
+			"})",
+			"",
+			"const mapDispatchToProps = {",
+			"  ",
+			"}",
+			"",
+			"export default connect(mapStateToProps, mapDispatchToProps)(${1:componentName})",
+			""
+		],
+		"description": "Creates a React component class with PropTypes with connected redux and ES7 module system"
+	},
+	"classConstructor": {
+		"prefix": "class-cons",
+		"body": [
+			"constructor(props) {",
+			"  super(props)",
+			"",
+			"  this.state = {",
+			"     $0",
+			"  }",
+			"}",
+			""
+		],
+		"description": "Adds a default constructor for it('', () => {})the class that contains props as arguments"
+	},
+	"emptyState": {
+		"prefix": "state-empty",
+		"body": ["this.state = {", "  $1", "}", ""],
+		"description": "Creates empty state object. To be used in a constructor."
+	},
+	"componentWillMount": {
+		"prefix": "cwm",
+		"body": ["componentWillMount = () => {", "  $0", "}", ""],
+		"description": "Invoked once, both on the client and server, immediately before the initial rendering occurs"
+	},
+	"componentDidMount": {
+		"prefix": "cdm",
+		"body": ["componentDidMount = () => {", "  $0", "}", ""],
+		"description": "Invoked once, only on the client (not on the server), immediately after the initial rendering occurs."
+	},
+	"componentWillReceiveProps": {
+		"prefix": "cwrp",
+		"body": ["componentWillReceiveProps = (nextProps) => {", "  $0", "}", ""],
+		"description": "Invoked when a component is receiving new props. This method is not called for the initial render."
+	},
+	"shouldComponentUpdate": {
+		"prefix": "scu",
+		"body": ["shouldComponentUpdate = (nextProps, nextState) => {", "  $0", "}", ""],
+		"description": "Invoked before rendering when new props or state are being received. "
+	},
+	"componentWillUpdate": {
+		"prefix": "cwup",
+		"body": ["componentWillUpdate = (nextProps, nextState) => {", "  $0", "}", ""],
+		"description": "Invoked immediately before rendering when new props or state are being received."
+	},
+	"componentDidUpdate": {
+		"prefix": "cdup",
+		"body": ["componentDidUpdate = (prevProps, prevState) => {", "  $0", "}", ""],
+		"description": "Invoked immediately after the component's updates are flushed to the DOM."
+	},
+	"componentWillUnmount": {
+		"prefix": "cwu",
+		"body": ["componentWillUnmount = () => {", "  $0", "}", ""],
+		"description": "Invoked immediately before a component is unmounted from the DOM."
+	},
+	"componentRender": {
+		"prefix": "render",
+		"body": ["render() {", "  return (", "    <div>", "      $0", "    </div>", "  )", "}"],
+		"description": "Basic render."
+	},
+	"componentSetStateObject": {
+		"prefix": "setstateObj",
+		"body": "this.setState({$0})",
+		"description": "Performs a shallow merge of nextState into current state"
+	},
+	"componentSetStateFunc": {
+		"prefix": "setstateFn",
+		"body": ["this.setState((state, props) => { return { $0 }})", ""],
+		"description": "Performs a shallow merge of nextState into current state"
+	},
+	"componentProps": {
+		"prefix": "props",
+		"body": "this.props.$0",
+		"description": "Access component's props"
+	},
+	"componentState": {
+		"prefix": "state",
+		"body": "this.state.$0"
+	},
+	"setupTest": {
+		"prefix": "test-setup",
+		"body": [
+			"import { ${1:ComponentName}, mapStateToProps, mapDispatchToProps } from '../${1:ComponentName}'",
+			"",
+			"describe('<${1:ComponentName} />', () => {",
+			"  const defaultProps = {",
+			"",
+			"  }",
+			"",
+			"  const setup = buildSetup(${1:ComponentName}, defaultProps)",
+			"",
+			"  test('render', () => {",
+			"    expect(setup().wrapper).toMatchSnapshot()",
+			"  })",
+			"})",
+			""
+		]
+	},
+	"setupTestWithEnzymeToJson": {
+		"prefix": "test-enzyme",
+		"body": [
+			"import toJson from 'enzyme-to-json'",
+			"import { ${1:ComponentName}, mapStateToProps, mapDispatchToProps } from '../${1:ComponentName}'",
+			"",
+			"describe('<${1:ComponentName} />', () => {",
+			"  const defaultProps = {",
+			"",
+			"  }",
+			"",
+			"  const setup = buildSetup(${1:ComponentName}, defaultProps)",
+			"",
+			"  test('render', () => {",
+			"    expect(toJson(setup().wrapper)).toMatchSnapshot()",
+			"  })",
+			"})",
+			""
+		]
+	},
+	"setupReactNativeTest": {
+		"prefix": "test-rnat",
+		"body": [
+			"import 'react-native'",
+			"import React from 'react'",
+			"import renderer from 'react-test-renderer'",
+			"",
+			"import ${1:ComponentName} from '../${1:ComponentName}'",
+			"",
+			"it('renders correctly', () =>{",
+			"const tree = renderer.create(<${1:ComponentName} />).toJSON()",
+			"",
+			"expect(tree).toMatchSnapshot()",
+			"})",
+			""
+		]
+	},
+	"asyncTest mocha/mukla": {
+		"prefix": "itasync",
+		"body": "${1:it}('${2:description}', (${3:done}) => {\n  ${0}\n})",
+		"description": "async test (mocha/mukla)"
+	},
+	"synchronousTest mocha/mukla": {
+		"prefix": "itsync",
+		"body": "${1:it}('${2:description}', () => {\n  ${0}\n})",
+		"description": "synchronous test (mocha/mukla)"
+	},
+	"tapeStyleTest": {
+		"prefix": "test-tape",
+		"body": "${1:test}('${2:description}', (${3:t}) => {\n  ${0}\n})",
+		"description": "tape-style test"
+	},
+	"mocha before": {
+		"prefix": "test-mochabf",
+		"body": "before(function () {\n\t${0}\n})",
+		"description": "mocha before"
+	},
+	"mocha beforeEach": {
+		"prefix": "test-mochabfe",
+		"body": "beforeEach(function () {\n\t${0}\n})",
+		"description": "mocha before for Each"
+	},
+	"mocha after": {
+		"prefix": "test-mochaaft",
+		"body": "after(function () {\n\t${0}\n})",
+		"description": "mocha after"
+	},
+	"mocha afterEach": {
+		"prefix": "test-mochaafe",
+		"body": "afterEach(function () {\n\t${0}\n})",
+		"description": "mocha after for Each"
+	},
+	"arrayify": {
+		"prefix": "arrayify",
+		"body": "/* istanbul ignore next */\nconst arrayify = (val) => {\n  if (!val) return []\n  if (Array.isArray(val)) return val\n  return [val]\n}",
+		"description": "arrayify"
+	},
+	"fixture usefulForAssertThrows": {
+		"prefix": "test-fixture",
+		"body": "function fixture () {\n  ${1:fnName}\n}${0}",
+		"description": "fixture (useful for assert.throws)"
+	},
+	"ifNotTypeofThenThrowError": {
+		"prefix": "iferr-throw",
+		"body": "if (typeof ${1:actual} !== ${2:expected}) {\n  throw new ${3:TypeError}('${4:message}')\n}${5}",
+		"description": "if not typeof then throw error"
+	},
+	"assertStrictEqual": {
+		"prefix": "assert-strictequal",
+		"body": "${1:assert}.strictEqual(${2:actual}, ${3:expected})${0}",
+		"description": "assert.strictEqual"
+	},
+	"assertNotStrictEqual": {
+		"prefix": "assert-notstrictequal",
+		"body": "${1:assert}.notStrictEqual(${2:actual}, ${3:expected})${0}",
+		"description": "assert.notStrictEqual"
+	},
+	"assertDeepStrictEqual": {
+		"prefix": "assert-deepstrictequal",
+		"body": "${1:assert}.deepStrictEqual(${2:actual}, ${3:expected})${0}",
+		"description": "assert.deepStrictEqual"
+	},
+	"assertNotDeepStrictEqual": {
+		"prefix": "assert-notdeepstrictequal",
+		"body": "${1:assert}.notDeepStrictEqual(${2:actual}, ${3:expected})${0}",
+		"description": "assert.notDeepStrictEqual"
+	},
+	"assertIfError": {
+		"prefix": "assert-iferr",
+		"body": "${1:assert}.ifError(${2:err})${0}",
+		"description": "assert.ifError"
+	},
+	"assertThrows": {
+		"prefix": "assert-throw",
+		"body": "${1:assert}.throws(${2:actual}, ${3:expected})${0}",
+		"description": "assert.throws"
+	},
+	"afterAll": {
+		"prefix": "jst-afterall",
+		"body": "\nafterAll(() => {\n\t$0\n});\n",
+		"description": "afterAll function is called once after all specs",
+		"scope": "source.js"
+	},
+	"afterEach": {
+		"prefix": "jst-aftereach",
+		"body": "\nafterEach(() => {\n\t$0\n});\n",
+		"description": "afterEach function is called once after each spec",
+		"scope": "source.js"
+	},
+	"beforeAll": {
+		"prefix": "jst-beforeall",
+		"body": "\nbeforeAll(() => {\n\t$0\n});\n",
+		"description": "beforeAll function is called once before all specs",
+		"scope": "source.js"
+	},
+	"beforeEach": {
+		"prefix": "jst-beforeeach",
+		"body": "\nbeforeEach(() => {\n\t$0\n});\n",
+		"description": "beforeEach function is called once before each spec",
+		"scope": "source.js"
+	},
+	"describe": {
+		"prefix": "jst-desc",
+		"body": "\ndescribe('${1:Name of the group}', () => {\n\t$0\n});\n",
+		"description": "creates a describe block",
+		"scope": "source.js"
+	},
+	"describe.only": {
+		"prefix": "jst-desconly",
+		"body": "\ndescribe.only('${1:Name of the group}', () => {\n\t$0\n});\n",
+		"description": "creates a describe block that runs only",
+		"scope": "source.js"
+	},
+	"describe.skip": {
+		"prefix": "jst-descskip",
+		"body": "\ndescribe.skip('${1:Name of the group}', () => {\n\t$0\n});\n",
+		"description": "creates a describe block that will be skipped",
+		"scope": "source.js"
+	},
+	"expect": {
+		"prefix": "exp",
+		"body": "expect($1)$0",
+		"description": "expect actual value",
+		"scope": "source.js"
+	},
+	"expect.resolves": {
+		"prefix": "exp-res",
+		"body": "expect($1).resolves$0",
+		"description": "expect promise resolves to",
+		"scope": "source.js"
+	},
+	"expect.rejects": {
+		"prefix": "exp-rej",
+		"body": "expect($1).rejects$0",
+		"description": "expect promise rejects to",
+		"scope": "source.js"
+	},
+	"it": {
+		"prefix": "it",
+		"body": "\nit('should ${1:behave...}', () => {\n\t$0\n});\n",
+		"description": "creates an it block",
+		"scope": "source.js"
+	},
+	"it.only": {
+		"prefix": "it-o",
+		"body": "\nit.only('should ${1:behave...}', () => {\n\t$0\n});\n",
+		"description": "creates an it block  that runs only",
+		"scope": "source.js"
+	},
+	"it.skip": {
+		"prefix": "it-s",
+		"body": "\nit.skip('should ${1:behave...}', () => {\n\t$0\n});\n",
+		"description": "creates an it block that will be skipped",
+		"scope": "source.js"
+	},
+	"template:cut": {
+		"prefix": "jst-cut",
+		"body": [
+			"describe('${1:Name of the group}', () => {\n",
+			"\tlet ${2:cut};\n",
+			"\tbeforeEach(() => {\n\t\tthis.$2 = $3;\n\t});\n",
+			"\ttest('should ${4:behave...}', () => {",
+			"\t\texpect(this.$2).toBe($0);",
+			"\t});\n",
+			"});"
+		],
+		"description": "creates a template to test a class under test",
+		"scope": "source.js"
+	},
+	"test": {
+		"prefix": "test",
+		"body": "\ntest('should ${1:behave...}', () => {\n\t$0\n});\n",
+		"description": "creates a test block",
+		"scope": "source.js"
+	},
+	"test.only": {
+		"prefix": "test-only",
+		"body": "\ntest.only('should ${1:behave...}', () => {\n\t$0\n});\n",
+		"description": "creates a test block  that runs only",
+		"scope": "source.js"
+	},
+	"test.skip": {
+		"prefix": "test-skip",
+		"body": "\ntest.skip('should ${1:behave...}', () => {\n\t$0\n});\n",
+		"description": "creates a test block that will be skipped",
+		"scope": "source.js"
+	},
+	"toBe": {
+		"prefix": "tb",
+		"body": "expect($1).toBe($2);$0",
+		"description": "expects the first argument to be equal with the second one",
+		"scope": "source.js"
+	},
+	"toBeCloseTo": {
+		"prefix": "tb-closeto",
+		"body": "expect($1).toBeCloseTo(${2:number}, ${3:delta});$0",
+		"description": "expects the first argument to be close to the second one base on the delta",
+		"scope": "source.js"
+	},
+	"toBeDefined": {
+		"prefix": "tb-def",
+		"body": "expect($1).toBeDefined();$0",
+		"description": "expects the argument is defined",
+		"scope": "source.js"
+	},
+	"toBeFalsy": {
+		"prefix": "tb-falsy",
+		"body": "expect($1).toBeFalsy();$0",
+		"description": "expects the argument is falsy",
+		"scope": "source.js"
+	},
+	"toBeGreaterThan": {
+		"prefix": "tb-gt",
+		"body": "expect($1).toBeGreaterThan($2);$0",
+		"description": "expects the argument is greater than or equal",
+		"scope": "source.js"
+	},
+	"toBeGreaterThanOrEqual": {
+		"prefix": "tb-gte",
+		"body": "expect($1).toBeGreaterThanOrEqual($2);$0",
+		"description": "expects the argument is greater than",
+		"scope": "source.js"
+	},
+	"toBeInstanceOf": {
+		"prefix": "tb-instance",
+		"body": "expect($1).toBeInstanceOf($2);$0",
+		"description": "expects the argument is less than",
+		"scope": "source.js"
+	},
+	"toBeLessThan": {
+		"prefix": "tb-lt",
+		"body": "expect($1).toBeLessThan($2);$0",
+		"description": "expects the argument is less than",
+		"scope": "source.js"
+	},
+	"toBeLessThanOrEqual": {
+		"prefix": "tb-lte",
+		"body": "expect($1).toBeLessThan($2);$0",
+		"description": "expects the argument is less than or equal",
+		"scope": "source.js"
+	},
+	"toBeNull": {
+		"prefix": "tb-null",
+		"body": "expect($1).toBeNull();$0",
+		"description": "expects the argument is null",
+		"scope": "source.js"
+	},
+	"toBeTruthy": {
+		"prefix": "tb-truthy",
+		"body": "expect($1).toBeTruthy();$0",
+		"description": "expects the argument is truthy",
+		"scope": "source.js"
+	},
+	"toBeUndefined": {
+		"prefix": "tb-undef",
+		"body": "expect($1).toBeUndefined();$0",
+		"description": "expects the argument is undefined",
+		"scope": "source.js"
+	},
+	"toContain": {
+		"prefix": "to-contain",
+		"body": "expect(${1:list}).toContain(${2:item});$0",
+		"description": "expects the list contains the item (===)",
+		"scope": "source.js"
+	},
+	"toContainEqual": {
+		"prefix": "to-ce",
+		"body": "expect(${1:list}).toContainEqual(${2:item});$0",
+		"description": "expects the list contains the item (equals)",
+		"scope": "source.js"
+	},
+	"toEqual": {
+		"prefix": "to-eq",
+		"body": "expect($1).toEqual($2);$0",
+		"description": "expects the first argument to be equal with the second one",
+		"scope": "source.js"
+	},
+	"toHaveBeenCalled": {
+		"prefix": "to-hbc",
+		"body": "expect($1).toHaveBeenCalled();$0",
+		"description": "returns true if the spy was called",
+		"scope": "source.js"
+	},
+	"toHaveBeenCalledTimes": {
+		"prefix": "to-hbct",
+		"body": "expect($1).toHaveBeenCalledTimes($2);$0",
+		"description": "returns true if the spy has been called given times",
+		"scope": "source.js"
+	},
+	"toHaveBeenCalledWith": {
+		"prefix": "to-hbcw",
+		"body": "expect($1).toHaveBeenCalledWith($2);$0",
+		"description": "returns true if the spy has been called with",
+		"scope": "source.js"
+	},
+	"toHaveBeenLastCalledWith": {
+		"prefix": "to-hblcw",
+		"body": "expect($1).toHaveBeenLastCalledWith($2);$0",
+		"description": "returns true if the spy has been last called with",
+		"scope": "source.js"
+	},
+	"toHaveLength": {
+		"prefix": "to-hl",
+		"body": "expect($1).toHaveLength($2);$0",
+		"description": "expects the object to have length",
+		"scope": "source.js"
+	},
+	"toHaveProperty": {
+		"prefix": "to-hp",
+		"body": "expect($1).toHaveProperty(${2:keyPath}, ${3:value});$0",
+		"description": "returns true if the argument matches the second object",
+		"scope": "source.js"
+	},
+	"toMatch": {
+		"prefix": "to-match",
+		"body": "expect($1).toMatch($2);$0",
+		"description": "returns true if the argument matches the second value",
+		"scope": "source.js"
+	},
+	"toMatchObject": {
+		"prefix": "to-matcho",
+		"body": "expect($1).toMatchObject($2);$0",
+		"description": "returns true if the argument matches the second object",
+		"scope": "source.js"
+	},
+	"toMatchSnapshot": {
+		"prefix": "to-ms",
+		"body": "expect($1).toMatchSnapshot();$0",
+		"description": "returns true if the argument matches the most recent snapshot",
+		"scope": "source.js"
+	},
+	"toThrow": {
+		"prefix": "to-throw",
+		"body": "expect(() => {\n\t$0\n}).toThrow();",
+		"description": "expects that the method will throw",
+		"scope": "source.js"
+	},
+	"toThrowError": {
+		"prefix": "to-thrower",
+		"body": "expect(() => {\n\t$0\n}).toThrowError($1);",
+		"description": "expects that the method will throw a specific error",
+		"scope": "source.js"
+	},
+	"toThrowErrorMatchingSnapshot": {
+		"prefix": "to-tems",
+		"body": "expect(() => {\n\t$0\n}).toThrowErrorMatchingSnapshot();",
+		"description": "expects that the method will throw an error mathing the snapshpot",
+		"scope": "source.js"
+	},
+	"Node callback": {
+		"prefix": "nodecb",
+		"body": "function (err, ${1:value}) {\n\tif (err) throw err\n\t${0}\n}",
+		"description": "Node callback"
+	},
+	"require": {
+		"prefix": "req",
+		"body": "require('${1:module}')"
+	},
+	"const module = require('module')": {
+		"prefix": "req-const",
+		"body": "const ${1:module} = require('${1:module}')",
+		"description": "const module = require('module')"
+	},
+	"exports.member": {
+		"prefix": "expm",
+		"body": "exports.${1:member} = ${2:value}"
+	},
+	"module.exports": {
+		"prefix": "modexp",
+		"body": "module.exports = ${1:name}"
+	},
+	"module as class": {
+		"prefix": "modexp-class",
+		"body": "class ${1:name} {\n\tconstructor (${2:arguments}) {\n\t\t${0}\n\t}\n}\n\nmodule.exports = ${1:name}\n"
+	},
+	"module export": {
+		"prefix": "export",
+		"body": "export ${1:member}"
+	},
+	"module export const": {
+		"prefix": "export-const",
+		"body": "export const ${1:member} = ${2:value}"
+	},
+	"module default export function": {
+		"prefix": "export-dfn",
+		"body": "export default function ${1:name} (${2:arguments}) {\n\t${0}\n}"
+	},
+	"processExit": {
+		"prefix": "process-exit",
+		"body": "process.exit(${1:code})${0}",
+		"description": "process.exit"
+	},
+	"throwNewError": {
+		"prefix": "error",
+		"body": "throw new ${1:TypeError}('${2:message}')${3}",
+		"description": "throw new error"
+	},
+	"try/catch": {
+		"prefix": "try/catch",
+		"body": "try {\n\t${0}\n} catch (${1:err}) {\n\t\n}"
+	},
+	"try/finally": {
+		"prefix": "try/finally",
+		"body": "try {\n\t${0}\n} finally {\n\t\n}"
+	},
+	"try/catch/finally": {
+		"prefix": "try/catch/finally",
+		"body": "try {\n\t${0}\n} catch (${1:err}) {\n\t\n} finally {\n\t\n}"
+	},
+	"key/valuePair": {
+		"prefix": "kvp",
+		"body": "${1:key}: ${2:'value'}",
+		"description": "key/value pair"
+	},
+	"Object.assign": {
+		"prefix": "obj-assign",
+		"body": "Object.assign(${1:dest}, ${2:source})"
+	},
+	"Object.create": {
+		"prefix": "obj-create",
+		"body": "Object.create(${1:obj})"
+	},
+	"Object.getOwnPropertyDescriptor": {
+		"prefix": "obj-godd",
+		"body": "Object.getOwnPropertyDescriptor(${1:obj}, '${2:prop}')",
+		"description": "Object.getOwnPropertyDescriptor"
+	},
+	"Object.defineProperty": {
+		"prefix": "obj-defprop",
+		"body": "Object.defineProperty(${1:dest}, '${2:prop}', {\n\t${0}\n})"
+	},
+	"Object.keys": {
+		"prefix": "obj-keys",
+		"body": "Object.keys(${1:obj})"
+	},
+	"sequence of 0..n": {
+		"prefix": "seq",
+		"body": "[...Array(${1:length}).keys()]${0}",
+		"description": "sequence of 0..n"
+	},
+	"jspAmdmod": {
+		"prefix": "jspAmdmod",
+		"body": "\ndefine([\n    \"${1:requiredModules}\"\n], function(${2:modules}) {\n    \"use strict\";\n\n    // static public property\n    ${3:myModule}.prop;\n\n    var ${3:myModule} = function() {\n\n        // public var\n        this.b = null;\n\n        // pseudo-protected var\n        this._c = null;\n\n    };\n\n    function ${4:privateMethod}(args) {\n    };\n\n    ${3:myModule}.${5:staticMethod} = function(args) {\n    };\n\n    ${3:myModule}.prototype.${6:publicMethod} = function(args) {\n    };\n\n    return ${3:myModule};\n});",
+		"description": "JS AMD module pattern",
+		"scope": "source.js"
+	},
+	"jspConstructor": {
+		"prefix": "jspConstructor",
+		"body": "\nvar ${1:ConstructorName} = (function() {\n\t'use strict';\n\n\tfunction ${1:ConstructorName}(${2:args}) {\n\t\t// enforces new\n\t\tif (!(this instanceof ${1:ConstructorName})) {\n\t\t\treturn new ${1:ConstructorName}(${2:args});\n\t\t}\n\t\t${3:// constructor body}\n\t}\n\n\t${4:${1:ConstructorName}.prototype.${5:methodName} = function(${6:args}) {\n\t\t${7:// method body}\n\t\\}};\n\n\treturn ${1:ConstructorName};\n}());",
+		"description": "JS constructor pattern",
+		"scope": "source.js"
+	},
+	"jspDebounce": {
+		"prefix": "jspDebounce",
+		"body": "\nvar ${1:functionName} = (function() {\n\t'use strict';\n\n\tvar timeWindow = ${2:500}; // time in ms\n\tvar timeout;\n\n\tvar ${1:functionName} = function(${3:args}) {\n\t\t${4: // your code goes here}\n\t};\n\n\treturn function() {\n\t\tvar context = this;\n\t\tvar args = arguments;\n\t\tclearTimeout(timeout);\n\t\ttimeout = setTimeout(function() {\n\t\t\t${1:functionName}.apply(context, args);\n\t\t}, timeWindow);\n\t};\n}());",
+		"description": "Debounced function",
+		"scope": "source.js"
+	},
+	"jspForin": {
+		"prefix": "jspForin",
+		"body": "\nfor (${1:prop} in ${2:obj}) {\n\tif ({}.hasOwnProperty.call(${2:obj}, ${1:prop})) {\n\t\t${3:${2:obj}[${1:prop}]$0;}\n\t}\n}",
+		"description": "for in own properties",
+		"scope": "source.js"
+	},
+	"jspIfun": {
+		"prefix": "jspIfun",
+		"body": "\n;(function() {\n\t'use strict';\n\n\t$1\n}());",
+		"description": "immediate function",
+		"scope": "source.js"
+	},
+	"jspIfor": {
+		"prefix": "jspIfor",
+		"body": "\nfor (var i = 0, len = ${1:arr}.length; i < len; i++) {\n\t${2:$1[i]}$3\n}",
+		"description": "improved for loop",
+		"scope": "source.js"
+	},
+	"jspMemoize": {
+		"prefix": "jspMemoize",
+		"body": "\nvar ${1:functionName} = (function() {\n\t'use strict';\n\n\tvar funcMemoized = function() {\n\t\tvar cacheKey = JSON.stringify(Array.prototype.slice.call(arguments));\n\t\tvar result;\n\n\t\tif (!funcMemoized.cache.hasOwnProperty(cacheKey)) {\n\t\t\t\t${2:// your expensive computation goes here\n\t\t\t\t// to reference the paramaters passed, use arguments[n]\n\t\t\t\t// eg.: result = arguments[0] + arguments[1];}\n\t\t\t\tfuncMemoized.cache[cacheKey] = result;\n\t\t}\n\n\t\treturn funcMemoized.cache[cacheKey];\n\t};\n\n\tfuncMemoized.cache = {};\n\n\treturn funcMemoized;\n}());",
+		"description": "Function with memoization",
+		"scope": "source.js"
+	},
+	"jspModule": {
+		"prefix": "jspModule",
+		"body": "\nvar ${1:moduleName} = (function() {\n\t'use strict';\n\n\tvar ${1:moduleName} = {\n\t\tinit: {\n\t\t\t$2\n\t\t}\n\t};\n\n\treturn ${1:moduleName};\n}());",
+		"description": "JS module pattern",
+		"scope": "source.js"
+	},
+	"jspNamespace": {
+		"prefix": "jspNamespace",
+		"body": "\n;(function(${1:namespace}) {\n  'use strict';\n\n\t$2\n})(window.$1 = window.$1 || {});",
+		"description": "namespace pattern",
+		"scope": "source.js"
+	},
+	"jspOkl": {
+		"prefix": "jspOkl",
+		"body": "\nObjects.keys(${1:obj}).forEach(function(key) {\n\t${2:$1}\n})",
+		"description": "Object.keys loop",
+		"scope": "source.js"
+	},
+	"jspOnce": {
+		"prefix": "jspOnce",
+		"body": "\nvar ${1:functionName} = (function() {\n  var didRun = false;\n\n  // This function will be executed only once, no matter how many times\n  // it is called.\n  function ${1:functionName}() {\n    ${2:// Your code goes here}\n  }\n\n  return function() {\n    if (didRun) {\n      return;\n    }\n\n    didRun = true;\n\n    return ${1:functionName}.apply(this, arguments);\n  }\n})();",
+		"description": "Execute a function only once.",
+		"scope": "source.js"
+	},
+	"jspRmodule": {
+		"prefix": "jspRmodule",
+		"body": "\nvar ${1:revealingModuleName} = (function() {\n\t'use strict';\n\n\tfunction ${2:methodName}() {\n\t\t${3}\n\t}\n\n\treturn {\n\t\t${2:methodName}:${2:methodName}\n\t};\n}());",
+		"description": "JS revealing module pattern",
+		"scope": "source.js"
+	},
+	"jspSingleton": {
+		"prefix": "jspSingleton",
+		"body": "\nvar ${1:name} = (function() {\n\t'use strict';\n\n\tvar instance;\n\n\t${1:name} = function(${2:args}) {\n\t\tif (instance) {\n\t\t\treturn instance;\n\t\t}\n\n\t\tinstance = this;\n\n\t\t${3:// your code goes here}\n\t};\n\n\treturn ${1:name};\n}());",
+		"description": "JS singleton pattern",
+		"scope": "source.js"
+	},
+	"jspThrottle": {
+		"prefix": "jspThrottle",
+		"body": "\nvar ${1:functionName} = (function() {\n\t'use strict';\n\n\tvar timeWindow = ${2:500}; // time in ms\n\tvar lastExecution = new Date((new Date()).getTime() - timeWindow);\n\n\tvar ${1:functionName} = function(${3:args}) {\n\t\t${4: // your code goes here}\n\t};\n\n\treturn function() {\n\t\tif ((lastExecution.getTime() + timeWindow) <= (new Date()).getTime()) {\n\t\t\tlastExecution = new Date();\n\t\t\treturn ${1:functionName}.apply(this, arguments);\n\t\t}\n\t};\n}());",
+		"description": "Throttled function",
+		"scope": "source.js"
+	},
+	"UMD module without params": {
+		"prefix": "jspUmd",
+		"body": [
+			"(function (context, factory) {",
+			"    if (typeof exports === 'object') {",
+			"        module.exports = factory();",
+			"    } else if (typeof define === 'function' && define.amd) {",
+			"        define(factory);",
+			"    } else {",
+			"        context.${1:yourModuleName} = factory();",
+			"    }",
+			"})(this, function () {",
+			"    // your module body",
+			"});"
+		],
+		"description": "You can create your own Javascript UMD module - compatible with AMD, CommonJS and Browser global approach."
+	},
+	"UMD module with params": {
+		"prefix": "jspUmdp",
+		"body": [
+			"(function (context, factory) {",
+			"    if (typeof exports === 'object') {",
+			"        module.exports = factory(require('b'));",
+			"    } else if (typeof define === 'function' && define.amd) {",
+			"        define(['b'], factory);",
+			"    } else {",
+			"        context.${1:yourModuleName} = factory(context.b);",
+			"    }",
+			"})(this, function (b) {",
+			"    // your module body",
+			"});"
+		],
+		"description": "You can create your own Javascript UMD module - compatible with AMD, CommonJS and Browser global approach."
+	},
+	"eslint-disable": {
+		"prefix": "eslint-disable",
+		"body": ["/* eslint-disable ${1:rule} */", "$0/* eslint-enable ${1} */"],
+		"description": "ESLint disable wrapper"
+	},
+	"eslint-disable-line": {
+		"prefix": "eslint-disable-line",
+		"body": ["// eslint-disable-line ${0:rule}"],
+		"description": "ESLint disable line"
+	},
+	"eslint-disable-next-line": {
+		"prefix": "eslint-disable-next-line",
+		"body": ["// eslint-disable-next-line ${0:rule}"],
+		"description": "ESLint disable next line"
+	},
+	"at": {
+		"prefix": "shd-author",
+		"body": [
+			"/*!",
+			" * @author ${1:user} <${2:email}>",
+			" * date ${3:month}/${4:day}/${5:year}",
+			" * ${6:description}",
+			" */"
+		],
+		"description": "Author Information"
+	},
+	"ed": {
+		"prefix": "shd-xcldef",
+		"body": [
+			"/**",
+			" * @class ${1:name}",
+			" * @extends ${2:extend}",
+			" * @xtype ${4:xtype}",
+			" * ${5:description}",
+			" */",
+			"Ext.define('${1:name}', {",
+			"  extend: '${2:extend}',",
+			"  xtype: '${4:xtype}',",
+			"  ${6://}requires: [${7}],",
+			"  initComponent: function (){",
+			"    var ${8:me} = this;",
+			"",
+			"    Ext.apply(${8:me}, {",
+			"      items: [",
+			"       {",
+			"        $0",
+			"       }",
+			"      ]",
+			"    });",
+			"",
+			"    ${8:me}.callParent(arguments);",
+			"  }",
+			"});"
+		],
+		"description": "Ext JS Class Definition"
+	},
+	"pt": {
+		"prefix": "shd-proptag",
+		"body": [
+			"@${1|param,arg,argument|} {${2|String,Number,Boolean,Object,Array,Function,Date|}${3}} ${4:name}  `${5:default}` ${6:description}"
+		],
+		"description": "Property Tag"
+	},
+	"pd": {
+		"prefix": "shd-propdef",
+		"body": [
+			"/*",
+			" * @${1|cfg,arg,argument|} {${2|String,Number,Boolean,Object,Array,Function,Date|}${3}} ${4:name}  `${5:default}` ${6:description}",
+			" */",
+			"${4:name}${7|:,=|} ${5:null}${8:,}"
+		],
+		"description": "Property definition"
+	},
+	"pp": {
+		"prefix": "shd-prop",
+		"body": ["${1:property}${2|:,=|} ${3:null}${4:,}"],
+		"description": "Property"
+	},
+	"ep": {
+		"prefix": "shd-eqprop",
+		"body": ["${1:property}${2|:,=|} ${3}${4:property} ${5:,}"],
+		"description": "Equal name property and value"
+	},
+	"sp": {
+		"prefix": "shd-strprop",
+		"body": ["${1:property}${2|:,=|} '${3:value}'${4:,}"],
+		"description": "String property"
+	},
+	"gp": {
+		"prefix": "shd-getprop",
+		"body": ["${1:property}${2|:,=|} ${3:model}.${4:get}('${5:dataIndex}')${6:,}"],
+		"description": "Get Property"
+	},
+	"bp": {
+		"prefix": "shd-bindprop",
+		"body": ["${1:property}: '{${2:value}}'${3:,}"],
+		"description": "Bind property"
+	},
+	"bc": {
+		"prefix": "shd-bindconf",
+		"body": ["${1:bind}: {", "  ${2:property}: '{${3:value}}',$0", "},"],
+		"description": "Bind configuration"
+	},
+	"ap": {
+		"prefix": "shd-arrprop",
+		"body": ["${1:name}${2|:,=|} [${3}]${4:,}"],
+		"description": "Array property"
+	},
+	"op": {
+		"prefix": "shd-objprop",
+		"body": ["${1:name}${2::} {", "  ${4:property}: ${5:''}, $0", "},"],
+		"description": "Object property"
+	},
+	"ct": {
+		"prefix": "shd-ctxt",
+		"body": ["@${1|private,protected,public|} ${2:args}"],
+		"description": "Context Tag"
+	},
+	"cd": {
+		"prefix": "shd-cdebug",
+		"body": [
+			"//<debug>",
+			"${1}",
+			"console.${2|log,info,warn,error|}('${3:debug}', ${4:arguments}); $0",
+			"//</debug>"
+		],
+		"description": "console debug block"
+	},
+	"cm": {
+		"prefix": "shd-clm",
+		"body": [
+			"//<debug>",
+			"${1}",
+			"  console.${2|assert,count,debug,dir,dirxml,error,group,groupCollapsed,groupEnd,info,log,profile,profileEnd,table,time,timeEnd,timeStamp,trace,warn|}(${4:arguments}); $0",
+			"//</debug>"
+		],
+		"description": "console methods"
+	},
+	"cc": {
+		"prefix": "shd-cc",
+		"body": ["/**", " * $0", " */"],
+		"description": "Comment code"
+	},
+	"uf": {
+		"prefix": "shd-upfn",
+		"body": [
+			" /**",
+			"  * @${1|private,protected,public|}",
+			"  */",
+			"update${2:Property} ${3|:,=|} function (new${2:Property}, old${2:Property}) {",
+			"  $0",
+			"},"
+		],
+		"description": "update function property"
+	},
+	"sg": {
+		"prefix": "shd-setget",
+		"body": [
+			"/**",
+			" * @param {${1:type}} ${2:name}  `${3:default}` ${4:description} ",
+			" * @${5|public,private,protected|}",
+			" */",
+			"set${6:Property}${7|:,=|} function (${2:name}) {",
+			"  var old${2:name} = this.${2:name};",
+			"  if (${2:name} !== old${2:name}) {",
+			"    ${8}",
+			"    this.${2:name} = ${2:name};",
+			"    //this.update${6:Property}(${2:name}, old${2:name});",
+			"  }",
+			"},",
+			"/**",
+			" * @returns {${1:type}} ${2:name} `${3:default}` ${4:description} ",
+			" * @${5|public,private,protected|}",
+			" */",
+			"get${6:Property}${7|:,=|} function () {",
+			"  var ${2:name} = this.${2:name} || ${3:default};",
+			"  ${9}",
+			"  return ${2:name};",
+			"},"
+		],
+		"description": "set and get property"
+	},
+	"cv": {
+		"prefix": "shd-ctrlvars",
+		"body": [
+			"var ${1:me} = this,",
+			"  ${2:view} = ${1:me}.getView(),",
+			"  ${3:model} = ${1:me}.getViewModel(),",
+			"  ${4:refs} = ${1:me}.getReferences();",
+			"  $0"
+		],
+		"description": "Control variables"
+	},
+	"xl": {
+		"prefix": "shd-xlog",
+		"body": [
+			"${Ext}.log({",
+			"  msg: '${1:debug}',",
+			"  level: '${2|log,info,error,warn|}',",
+			"  dump: ${3:arguments},",
+			"  stack: ${4|true,false|}",
+			"});"
+		],
+		"description": "Ext log"
+	},
+	"fp": {
+		"prefix": "shd-funcprop",
+		"body": [
+			"/**",
+			" * ${1:name} ${2:description}",
+			" * @${3|private,protected,public|}",
+			" */",
+			"${1:name}${4|:,=|} function (${5}) {",
+			"  $0",
+			"},"
+		],
+		"description": "Function Property"
+	},
+	"mp": {
+		"prefix": "shd-methodprop",
+		"body": [
+			"/**",
+			" * @${1|method,function|} ${2:name} ${3:description}",
+			" * @returns {${4|String,Number,Boolean,Object,Array,Function,Date|}} ${5:property} `${6:default}` ${7:description}",
+			" * @${8|private,protected,public|}",
+			" */",
+			"${2:name} ${9|:,=|} function (${10}) {",
+			"  var ${5:property} = ${6:null};",
+			"  $0",
+			"  return ${5:property};",
+			"},"
+		],
+		"description": "Method Property"
+	},
+	"ew": {
+		"prefix": "shd-ew",
+		"body": ["Ext.${1|widget,create|}('${xtype}',{", "  $0", "});"],
+		"description": "Ext Widget"
+	},
+	"cf": {
+		"prefix": "shd-cf",
+		"body": ["${1:function}($0);"],
+		"description": "call function"
+	},
+	"aop": {
+		"prefix": "shd-aop",
+		"body": ["${1:object}[${2:'${3:property}'}];"],
+		"description": "Access object property"
+	},
+	"td": {
+		"prefix": "shd-todo",
+		"body": ["/**", " * @todo ${1:description} $0", " */"],
+		"description": "Todo Tag"
+	},
+	"gt": {
+		"prefix": "shd-gt",
+		"body": ["/**", " * @${1:tag} $0 ", " */"],
+		"description": "Generic Tag"
+	},
+	"vt": {
+		"prefix": "shd-vt",
+		"body": ["/**", " * @version ${1:major}.${2:minor}.${3:patch} $0", " */"],
+		"description": "Version Tag"
+	},
+	"dt": {
+		"prefix": "shd-dept",
+		"body": ["/**", " * @deprecated $0 ", " */"],
+		"description": "Deprecated Tag"
+	},
+	"crt": {
+		"prefix": "shd-copyt",
+		"body": ["/**", " * @copyright  ${1:name} ${2:year} ", " * $0 ", " */"],
+		"description": "Copyright Tag"
+	},
+	"comment_block": {
+		"prefix": "comment_block",
+		"body": "/**\n *\n * ${1:Block comment}\n *\n */\n\n${0}",
+		"description": "Comment - Block comment",
+		"scope": ""
+	},
+	"comment_todo": {
+		"prefix": "comment_todo",
+		"body": "/**\n\n\tTODO:\n\t- ${1:First todo item}\n\t- ${2:Second todo item}\n\n */\n\n",
+		"description": "Comment - Block with To-Do list",
+		"scope": ""
+	},
+	"comment_line": {
+		"prefix": "comment_line",
+		"body": "/* ${1:Comment} */\n\n${0}",
+		"description": "Comment - Wrapped comment line"
+	},
+	"comment_line_dash": {
+		"prefix": "comment_line_dash",
+		"body": "\n/*--------  ${1:Dash comment line}  --------*/\n${0}",
+		"description": "Comment - Dash wrapped comment line"
+	},
+	"comment_line_star": {
+		"prefix": "comment_line_star",
+		"body": "\n/*********  ${1:Dash comment line}  **********/\n${0}",
+		"description": "Comment - Star wrapped comment line"
+	},
+	"comment_section": {
+		"prefix": "comment_section",
+		"body": [
+			"",
+			"/**================================================== *",
+			" * ==========  ${1:Section comment block}  ========== *",
+			" * ================================================== */",
+			"\n$0\n",
+			"/* =======  End of ${1:Section comment block}  ======= */"
+		],
+		"description": "Comment - Section block comment (Both header and footer)"
+	},
+	"comment_section_begin": {
+		"prefix": "comment_section_begin",
+		"body": [
+			"",
+			"/**================================================== *",
+			" * ==========  ${1:Section comment block}  ========== *",
+			" * ================================================== */",
+			"\n$0\n"
+		],
+		"description": "Comment - Section block comment begin"
+	},
+	"Comment Big Block": {
+		"prefix": "comment",
+		"body": [
+			"/**",
+			"|--------------------------------------------------",
+			"| $1",
+			"|--------------------------------------------------",
+			"*/"
+		]
+	},
+	"comment_section_end": {
+		"prefix": "comment_section_end",
+		"body": "\n/* =======  End of ${1:Section comment block}  ======= */\n\n",
+		"description": "Comment - Section block comment end"
+	}
+}
