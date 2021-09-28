@@ -1,5 +1,24 @@
 #!/bin/zsh
 
+##########
+# System #
+##########
+
+function is_mac() {
+	cmd=$(command -v uname)
+
+	if [[ -z ${cmd} ]]; then
+		return 1
+	else
+		# dynamically redefines the function definition to avoid recomputing
+		if ${cmd} | grep Darwin 1>/dev/null; then
+			is_mac() { return 0; }
+		else
+			is_mac() { return 1; }
+		fi
+	fi
+}
+
 ############
 # Archives #
 ############
