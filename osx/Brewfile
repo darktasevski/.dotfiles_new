@@ -104,6 +104,7 @@ cask "zoom"
 cask "alfred"
 cask "mongodb-compass"
 cask "affinity-designer"
+cask "grammarly"
 # ## Install Fonts
 cask "font-iosevka"
 cask "font-inconsolata"

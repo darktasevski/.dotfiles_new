@@ -154,9 +154,12 @@
 	log = true # Include summaries of merged commits in newly created merge commit messages
 [mergetool "nvim"]
     cmd = nvim -f -c \"Gdiff\" \"$MERGED\"
+[branch]
+	autosetupmerge = true
+	sort=-committerdate # Sort branches by last commit date, descending.
 [rebase]
     autoSquash = true
-	# autoStash = true # https://git-scm.com/docs/git-rebase#git-rebase--autostash
+	autoStash = true # https://git-scm.com/docs/git-rebase#git-rebase--autostash
 [status]
     showUntrackedFiles = all
 [apply]
