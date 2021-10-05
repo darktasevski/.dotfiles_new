@@ -349,6 +349,20 @@ function tre() { tree -aC -I '.git' --dirsfirst "$@" | less -FRNX; }
 # Source: https://unix.stackexchange.com/questions/102008/how-do-i-trim-leading-and-trailing-whitespace-from-each-line-of-some-output
 function trimWS() { awk '{$1=$1};1'; }
 
+# Determine size of a file or total size of a directory
+function fs() {
+	if du -b /dev/null >/dev/null 2>&1; then
+		local arg=-sbh
+	else
+		local arg=-sh
+	fi
+	if [[ -n "$@" ]]; then
+		du $arg -- "$@"
+	else
+		du $arg .[^.]* *
+	fi
+}
+
 ######################
 # Network & Internet #
 ######################
@@ -413,6 +427,8 @@ function look_for_process() {
 	local ps_name=$1
 	ps aux | ack "${ps_name}"
 }
+
+alias lfp='look_for_process'
 
 function wgett() { wget -r -nH --no-parent --reject='index.html*' "$@"; }
 
