@@ -79,6 +79,7 @@ brew "tmuxp"  												# Tmux session manager
 brew "imagemagick"  										# ImageMagick is a software suite to create, edit, compose, or convert bitmap images
 brew "muffet" 												# website link checker which scrapes and inspects all pages in a website recursively
 brew "jrnl" 												# jrnl is a simple, fast, and powerful command-line note taking tool
+brew "reattach-to-user-namespace"							# 
 cask "ngrok" 												# ngrok is a free, open-source, secure tunneling service
 cask "anki"													# Anki is a free, open-source, cross-platform flashcard application
 cask "open-in-code"
