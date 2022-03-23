@@ -23,7 +23,7 @@ function docker_stopall {
 }
 
 ## Run Server to serve files from a local directory
-function serve {
+function docker_serve {
 	local port="$1"
 	[[ -z $port ]] && port=3000
 

@@ -7,6 +7,7 @@ tap "homebrew/core"
 tap "homebrew/services"
 tap "homebrew/cask-fonts"
 
+brew "bat" 													# cat, but with syntax highlighting
 brew "ack" 													# Search tool like grep, but optimized for programmers
 brew "adns" 												# C/C++ resolver library and DNS resolver utilities
 brew "awscli" 												# Official Amazon AWS command-line interface
@@ -96,15 +97,16 @@ cask "obsidian" 											# Knowledge base that works on top of a local folder 
 cask "postman" 												# Collaboration platform for API development
 cask "spotify"
 cask "slack"
-cask "thor" 												# Utility to switch between applications
+cask "sketch"
+cask "affinity-designer"
+cask "raindropio"
 cask "visual-studio-code"
 cask "webstorm"
 cask "intellij-idea"
 cask "viber"
 cask "zoom"
 cask "alfred"
-cask "mongodb-compass"
-cask "affinity-designer"
+# cask "mongodb-compass"
 cask "grammarly"
 # ## Install Fonts
 cask "font-iosevka"
@@ -125,7 +127,7 @@ cask "quicklook-json", args: { appdir: "~/Applications" }
 cask "quicklookase", args: { appdir: "~/Applications" }
 cask "webpquicklook", args: { appdir: "~/Applications" }
 
-cask "sloth"
+# cask "sloth"
 cask "lulu"
 cask "suspicious-package", args: { appdir: "~/Applications" }
 cask "the-unarchiver", args: { appdir: "~/Applications" }   # Unarchiver is a free utility for extracting archives

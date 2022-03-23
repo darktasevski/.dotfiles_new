@@ -77,3 +77,4 @@ export PATH=$PATH:${LOCAL_BIN_PATH}:${LOCAL_SBIN_PATH}:${PY_3_PATH}:${ARES_BIN_P
 export GIT_REVIEW_BASE="master" # See gitconfig
 GIT_EMAIL="darko.tasevski@redbox.com"
 GIT_USER="Darkø Tasevski"
+. "$HOME/.cargo/env"

@@ -148,7 +148,7 @@
 [init]
     templatedir = ~/.dotfiles/git/templates
 [url "ssh://git@github.com/"]
-    insteadOf = https://github.com/
+    insteadOf = https://github.com/ # @see https://github.com/rust-lang/cargo/issues/3381 if there are issues with installing cargo deps
 [merge]
     tool = nvim
 	log = true # Include summaries of merged commits in newly created merge commit messages

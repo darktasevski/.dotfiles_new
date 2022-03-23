@@ -158,6 +158,25 @@ imgtowebp() {
 		cwebp -q 100 $file -o $(basename ${filename}).webp
 	done
 }
+
+imgdirtowebp() {
+	input_dir="$1"
+	quality="$2"
+
+	if [[ -z "$input_dir" ]]; then
+		input_dir=$(pwd)
+	fi
+
+	if [[ -z "$quality" ]]; then
+		quality=70
+	fi
+
+	for FILE in $input_dir/*(jpg|jpeg|tif|tiff|png); do
+		cwebp $FILE -q $quality -progress -o ${FILE%.*}.webp
+		rm -f $FILE
+	done
+}
+
 #######
 # Git #
 #######
@@ -363,6 +382,16 @@ function fs() {
 	fi
 }
 
+# `o` with no arguments opens the current directory, otherwise opens the given
+# location
+function o() {
+	if [ $# -eq 0 ]; then
+		open .
+	else
+		open "$@"
+	fi
+}
+
 ######################
 # Network & Internet #
 ######################
@@ -393,7 +422,7 @@ tiny() {
 	curl -s "http://tinyurl.com/api-create.php?url=$1"
 }
 
-serve() {
+py_serve() {
 	local -r PORT=${1:-8888}
 	python2 -m SimpleHTTPServer "$PORT"
 }
