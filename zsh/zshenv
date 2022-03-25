@@ -10,7 +10,7 @@ export LANG=en_US.UTF-8 # Prefer US English and use UTF-8.
 export LANGUAGE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
-export MANPAGER='less -X' # Don’t clear the screen after quitting a manual page.
+export MANPAGER='less -X' # Don't clear the screen after quitting a manual page.
 export TMOUT=0
 # no lag on normal / insert mode switch   # see http://dougblack.io/words/zsh-vi-mode.html
 export KEYTIMEOUT=1

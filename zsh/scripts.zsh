@@ -255,9 +255,10 @@ smedia() {
 	$DOTFILES/bash/scripts/smedia.sh $@
 }
 
-# Usefult when there are two computers connected to the same monitor
+# Useful when there are two computers connected to the same monitor
 # Changes the input source for LG display to HDMI 2
 # For some reason, HDMI 2 is detected as DVI 2 input ¯\_(ツ)_/¯
+# @see https://github.com/kfix/ddcctl
 switch_display_input() {
 	local DISPLAY_NUM=1
 	local DVI2_INPUT_NUM=4
@@ -278,18 +279,6 @@ pom() {
 	local -r POMODORO_DURATION=${3:-25}
 
 	echo "(($HOURS * 60) + $MINUTES) / $POMODORO_DURATION" | bc
-}
-
-# Silly little script to understand zstyle
-names() {
-	local user_name user_surname user_nickname computer_name
-
-	zstyle -s ':name:' set_user_name user_name || user_name="LEELA"
-	zstyle -s ':name:surname:' set_user_name user_surname || user_surname="TURANGA"
-	zstyle -s ':name:nickname::' set_user_name user_nickname || user_nickname="CYCLOPE"
-	zstyle -s ':name:' set_computer_name computer_name || computer_name="BENDER"
-
-	echo "You're $user_name $user_surname $user_nickname and you're computer is called $computer_name"
 }
 
 jrnl() {
