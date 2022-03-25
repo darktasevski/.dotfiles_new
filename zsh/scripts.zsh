@@ -255,6 +255,15 @@ smedia() {
 	$DOTFILES/bash/scripts/smedia.sh $@
 }
 
+# Usefult when there are two computers connected to the same monitor
+# Changes the input source for LG display to HDMI 2
+# For some reason, HDMI 2 is detected as DVI 2 input ¯\_(ツ)_/¯
+switch_display_input() {
+	local DISPLAY_NUM=1
+	local DVI2_INPUT_NUM=4
+	$DOTFILES/bash/scripts/ddcctl -d $DISPLAY_NUM -i $DVI2_INPUT_NUM
+}
+
 promptspeed() {
 	for i in $(seq 1 10); do /usr/bin/time zsh -i -c exit; done
 }
