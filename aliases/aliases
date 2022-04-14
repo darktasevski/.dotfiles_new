@@ -28,14 +28,18 @@ alias k9="kill -9"
 # | ls |
 # +----+
 
-alias ls='ls -G' # Enable colored output by default
 
-alias l='ls -lFh'   # size,show type,human readable
-alias la='ls -lAFh' # long list,show almost all,show type,human readable
-alias lr='ls -tRFh' # sorted by date,recursive,show type,human readable
-alias lt='ls -ltFh' # long list,sorted by date,show type,human readable
-alias ll='ls -l'    # long list
-alias lsd='ls -1F'  # ls for Directories.
+if [[ "$(uname)" == "Darwin" ]]; then
+	alias ls='exa --icons' # Use exa on OSX
+elif [[ "$(expr substr $(uname -s) 1 5)" == "Linux" ]]; then
+	alias ls='ls -G' # Enable colored output by default
+	alias l='ls -lFh'   # size,show type,human readable
+	alias la='ls -lAFh' # long list,show almost all,show type,human readable
+	alias lr='ls -tRFh' # sorted by date,recursive,show type,human readable
+	alias lt='ls -ltFh' # long list,sorted by date,show type,human readable
+	alias ll='ls -l'    # long list
+	alias lsd='ls -1F'  # ls for Directories.
+fi
 
 # +----+
 # | cp |
