@@ -31,6 +31,7 @@ alias k9="kill -9"
 
 if [[ "$(uname)" == "Darwin" ]]; then
 	alias ls='exa --icons' # Use exa on OSX
+	alias cat='bat'
 elif [[ "$(expr substr $(uname -s) 1 5)" == "Linux" ]]; then
 	alias ls='ls -G' # Enable colored output by default
 	alias l='ls -lFh'   # size,show type,human readable
