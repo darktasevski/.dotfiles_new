@@ -66,6 +66,7 @@ brew "zopfli" 												# Fast lossless compression utility
 brew "zsh-history-substring-search" 						# Search your zsh history with a substring
 brew "federico-terzi/espanso/espanso" 						# Cross-platform Text Expander written in Rust
 brew "fzf" 													# A command-line fuzzy finder
+brew "starship"												# The minimal, blazing-fast, and infinitely customizable prompt for any shell!
 
 cask "adoptopenjdk13", args: { appdir: "~/Applications" }   # Java Development Kit
 cask "android-platform-tools" 								# Android SDK Platform-Tools
