@@ -75,7 +75,8 @@ brew "tmuxp"  												# Tmux session manager
 brew "imagemagick"  										# ImageMagick is a software suite to create, edit, compose, or convert bitmap images
 brew "muffet" 												# website link checker which scrapes and inspects all pages in a website recursively
 brew "jrnl" 												# jrnl is a simple, fast, and powerful command-line note taking tool
-brew "reattach-to-user-namespace"							# 
+brew "reattach-to-user-namespace"							# Reattach process (e.g., tmux) to background
+brew "httpie"												# httpie is a CLI, cURL-like tool for humans.
 
 cask "adoptopenjdk13", args: { appdir: "~/Applications" }   # Java Development Kit
 cask "android-platform-tools" 								# Android SDK Platform-Tools
@@ -84,14 +85,15 @@ cask "joshjon-nocturnal" 									# Nocturnal is a dark theme for macOS
 cask "mediainfo"											# MediaInfo is a free and open-source utility for gathering technical metadata of multimedia files
 cask "ngrok" 												# ngrok is a free, open-source, secure tunneling service
 cask "anki"													# Anki is a free, open-source, cross-platform flashcard application
-cask "open-in-code"
+cask "open-in-code" 										# Open in Code is a finder addon to open selected file/directory in the VS Code
 cask "1password" 											# password manager
 cask "charles"												# Charles is a network protocol analyzer
 cask "devutils"												# Offline toolbox for developers
-cask "dropbox"
+cask "dropbox" 												# Dropbox is a cloud storage service
 cask "geogebra"												# Solve, save and share math problems, graph functions, etc
 cask "iina" 												# video player
-cask "iterm2"
+cask "iterm2"												# iTerm2 is a terminal emulator
+cask "warp"													# Rust-based terminal
 cask "mathpix-snipping-tool" 								# Scanner app for math and science
 cask "obsidian" 											# Knowledge base that works on top of a local folder of plain text Markdown files
 cask "postman" 												# Collaboration platform for API development
