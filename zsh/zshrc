@@ -5,9 +5,9 @@ fpath=($DOTFILES/zsh/plugins $fpath)
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+# fi
 
 # +------------+
 # | NAVIGATION |
@@ -15,27 +15,27 @@ fi
 
 setopt AUTO_CD # Go to folder path without using cd.
 
-setopt AUTO_PUSHD        # Push the old directory onto the stack on cd.
-setopt PUSHD_IGNORE_DUPS # Do not store duplicates in the stack.
-setopt PUSHD_SILENT      # Do not print the directory stack after pushd or popd.
+setopt AUTO_PUSHD        		# Push the old directory onto the stack on cd.
+setopt PUSHD_IGNORE_DUPS 		# Do not store duplicates in the stack.
+setopt PUSHD_SILENT      		# Do not print the directory stack after pushd or popd.
 
-setopt CORRECT       # Spelling correction
-setopt CDABLE_VARS   # Change directory to a path stored in a variable.
-setopt EXTENDED_GLOB # Use extended globbing syntax.
+setopt CORRECT       			# Spelling correction
+setopt CDABLE_VARS   			# Change directory to a path stored in a variable.
+setopt EXTENDED_GLOB 			# Use extended globbing syntax.
 
 # +---------+
 # | HISTORY |
 # +---------+
 
-setopt EXTENDED_HISTORY       # Write the history file in the ':start:elapsed;command' format.
-setopt SHARE_HISTORY          # Share history between all sessions.
-setopt HIST_EXPIRE_DUPS_FIRST # Expire a duplicate event first when trimming history.
-setopt HIST_IGNORE_DUPS       # Do not record an event that was just recorded again.
-setopt HIST_IGNORE_ALL_DUPS   # Delete an old recorded event if a new event is a duplicate.
-setopt HIST_FIND_NO_DUPS      # Do not display a previously found event.
-setopt HIST_IGNORE_SPACE      # Do not record an event starting with a space.
-setopt HIST_SAVE_NO_DUPS      # Do not write a duplicate event to the history file.
-setopt HIST_VERIFY            # Do not execute immediately upon history expansion.
+setopt EXTENDED_HISTORY       	# Write the history file in the ':start:elapsed;command' format.
+setopt SHARE_HISTORY          	# Share history between all sessions.
+setopt HIST_EXPIRE_DUPS_FIRST 	# Expire a duplicate event first when trimming history.
+setopt HIST_IGNORE_DUPS       	# Do not record an event that was just recorded again.
+setopt HIST_IGNORE_ALL_DUPS   	# Delete an old recorded event if a new event is a duplicate.
+setopt HIST_FIND_NO_DUPS      	# Do not display a previously found event.
+setopt HIST_IGNORE_SPACE      	# Do not record an event starting with a space.
+setopt HIST_SAVE_NO_DUPS      	# Do not write a duplicate event to the history file.
+setopt HIST_VERIFY            	# Do not execute immediately upon history expansion.
 
 # +--------+
 # | COLORS |
@@ -86,13 +86,16 @@ fi
 # Load completion library for those sweet [tab] squares
 zplug "lib/completion", from:oh-my-zsh
 zplug "plugins/colorize", from:oh-my-zsh
-# zplug "rupa/z", use:z.sh
 zplug "chrissicool/zsh-256color", from:github
 zplug "djui/alias-tips", from:github
 zplug "zlsun/solarized-man", from:github
 zplug "zsh-users/zsh-autosuggestions" # suggests commands as you type based on history and completions.
-# zplug "zsh-users/zsh-syntax-highlighting", from:github, defer:2
+zplug "zsh-users/zsh-syntax-highlighting", from:github, defer:2
 # zplug romkatv/powerlevel10k, as:theme, depth:1
+if [[ "$(uname)" == "Linux" ]]; then
+	zplug "rupa/z", use:z.sh
+	zplug "zsh-users/zsh-history-substring-search", defer:2
+fi
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
@@ -167,7 +170,7 @@ bindkey -s '^w' 'fwork\n'
 # +------+
 
 # Java version manager
-if which jenv >/dev/null; then eval "$(jenv init -)"; fi
+if ! command -v jenv > /dev/null; then eval "$(jenv init -)"; fi
 
 # +---------------------+
 # | SYNTAX HIGHLIGHTING |
@@ -185,11 +188,13 @@ source $DOTFILES/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # starship prompt
 eval "$(starship init zsh)"
 
-# https://formulae.brew.sh/formula/z
-source /usr/local/etc/profile.d/z.sh
+if is_mac; then
+	# https://formulae.brew.sh/formula/z
+	source /usr/local/etc/profile.d/z.sh
+	# https://formulae.brew.sh/formula/zsh-history-substring-search#default
+	source /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+fi
 
-# https://formulae.brew.sh/formula/zsh-history-substring-search#default
-source /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh
 # create key bindings for zsh-history-substring-search
 bindkey '^[[A' history-substring-search-up 		# UP
 bindkey '^[[B' history-substring-search-down 	# DOWN

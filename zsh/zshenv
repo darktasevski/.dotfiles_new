@@ -30,7 +30,6 @@ export VISUAL="nvim"
 # zsh
 export ZDOTDIR="$HOME/.zsh"
 export TMUXDIR="$XDG_CONFIG_HOME/tmux"
-export TMUXDIR="$XDG_CONFIG_HOME/tmux"
 export VIMCONFIG="$XDG_CONFIG_HOME/nvim"
 export NVIM_PYTHON_LOG_FILE_PATH="~$HOME"/.nvimlog
 export FONTSDIR="$HOME/.fonts"
@@ -51,30 +50,34 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export N_PREFIX="$HOME/.n"
 [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"
 
-# Python
-PY_3_PATH="$HOME/Library/Python/3.7/bin:$PATH"
-
-# Smart TV stuff
-export LG_WEBOS_TV_SDK_HOME="/opt/webOS_TV_SDK"
-ARES_BIN_PATH=$PATH:/opt/webOS_TV_SDK/CLI/bin # LG webOS ares-cli - (it needs to be installed first)
-TIZEN_STUFF_PATH=${HOME}/Tizen/SDK/tools/ide/bin:${HOME}/Tizen/SDK/tools:${HOME}/Tizen/SDK/emulator/bin
-
-# Ruby/rbenv
-RBENV_PATH=$HOME/.rbenv/bin
-RUBY_GEMS=/usr/local/lib/ruby/gems/2.7.0/bin
+if [[ "$(uname)" == "Darwin" ]]; then
+	# Smart TV stuff
+	export LG_WEBOS_TV_SDK_HOME="/opt/webOS_TV_SDK"
+	ARES_BIN_PATH=$PATH:/opt/webOS_TV_SDK/CLI/bin # LG webOS ares-cli - (it needs to be installed first)
+	TIZEN_STUFF_PATH=${HOME}/Tizen/SDK/tools/ide/bin:${HOME}/Tizen/SDK/tools:${HOME}/Tizen/SDK/emulator/bin
+	# Python
+	PY_3_PATH="$HOME/Library/Python/3.7/bin:$PATH"
+	# Java
+	export MAVEN_HOME=/usr/local/Cellar/maven/3.8.1
+	# Ruby/rbenv
+	RBENV_PATH=$HOME/.rbenv/bin
+	RUBY_GEMS=/usr/local/lib/ruby/gems/2.7.0/bin
+	# PATH
+	export PATH=$PATH:${LOCAL_BIN_PATH}:${LOCAL_SBIN_PATH}:${PY_3_PATH}:${ARES_BIN_PATH}:${RUBY_GEMS}:${MAVEN_HOME}:$PATH
+else
+	# PATH
+	export PATH=$PATH:${LOCAL_BIN_PATH}:${LOCAL_SBIN_PATH}:$PATH
+fi
 
 export NPM_PATH=$HOME/.n/bin
 
-# Java
-export MAVEN_HOME=/usr/local/Cellar/maven/3.8.1
-JENV_PATH="$HOME/.jenv/bin:$PATH"
-export JENV_ROOT=/usr/local/opt/jenv
-
-# PATH
-export PATH=$PATH:${LOCAL_BIN_PATH}:${LOCAL_SBIN_PATH}:${PY_3_PATH}:${ARES_BIN_PATH}:${RUBY_GEMS}:${MAVEN_HOME}:$PATH
+if ! command -v jenv > /dev/null; then
+	JENV_PATH="$HOME/.jenv/bin:$PATH"
+	export JENV_ROOT=/usr/local/opt/jenv
+fi
 
 # git
 export GIT_REVIEW_BASE="master" # See gitconfig
-GIT_EMAIL="darko.tasevski@redbox.com"
+GIT_EMAIL="darktasevski@gmail.com"
 GIT_USER="Darkø Tasevski"
 . "$HOME/.cargo/env"

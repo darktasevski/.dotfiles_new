@@ -28,11 +28,10 @@ alias k9="kill -9"
 # | ls |
 # +----+
 
-
-if [[ "$(uname)" == "Darwin" ]]; then
-	alias ls='exa --icons' # Use exa on OSX
-	alias cat='bat'
-elif [[ "$(expr substr $(uname -s) 1 5)" == "Linux" ]]; then
+# Use htop if available
+if command -v exa >/dev/null; then
+	alias ls='exa --icons'
+else
 	alias ls='ls -G' # Enable colored output by default
 	alias l='ls -lFh'   # size,show type,human readable
 	alias la='ls -lAFh' # long list,show almost all,show type,human readable
@@ -40,6 +39,10 @@ elif [[ "$(expr substr $(uname -s) 1 5)" == "Linux" ]]; then
 	alias lt='ls -ltFh' # long list,sorted by date,show type,human readable
 	alias ll='ls -l'    # long list
 	alias lsd='ls -1F'  # ls for Directories.
+fi
+
+if command -v bat >/dev/null; then
+	alias cat='bat'
 fi
 
 # +----+

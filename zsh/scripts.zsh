@@ -564,7 +564,7 @@ function rbenv() {
 
 function jenv() {
 	unfunction "$0"
-	if ! command -v jenv >/dev/null; then
+	if ! command -v jenv > /dev/null; then
 		export PATH=$PATH:${JENV_PATH}
 	fi
 

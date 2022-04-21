@@ -9,12 +9,13 @@ Features:
 -   `Neovim` - as terminal editor
 -   `Tmux` - as terminal multiplexer
 -   `zsh` - as shell
--   `Powerlevel10k` - as zsh prompt
+-   `Powerlevel10k`/`starship` - as zsh prompt
 -   `n` - as node version manager
 -   `jenv` - as Java version manager
 -   custom git configuration
 -   a bunch of useful aliases
 -   a bunch of useful scripts
+-   Fedora/OSX combo
 
 Stuff I'm planning on adding and improving in the future:
 
@@ -23,8 +24,6 @@ Stuff I'm planning on adding and improving in the future:
 -   `neovim` configuration improvements and fixes (some stuff is not working great)
 -   improve font installation
 -   improve ssh and gnupg migration process
-
-> Currently, only OSX is supported. Since I'm also using Fedora workstation, I'm planning to expand this to support Linux in the future.
 
 ## Installation
 

@@ -14,6 +14,7 @@ brew "awscli" 												# Official Amazon AWS command-line interface
 brew "bandwhich" 											# Terminal bandwidth utilization tool
 brew "coreutils" 											# GNU File, Shell and Text utilities
 brew "curl" 												# Command line tool for transferring data with URL syntax
+brew "httpie"												# httpie is a CLI, cURL-like tool for humans.
 brew "diff-so-fancy" 										# Good-lookin' diffs with diff-highlight and more
 brew "exa" 													# Modern replacement for ls
 brew "fd" 													# A simple, fast and user-friendly alternative to find
@@ -76,7 +77,6 @@ brew "imagemagick"  										# ImageMagick is a software suite to create, edit,
 brew "muffet" 												# website link checker which scrapes and inspects all pages in a website recursively
 brew "jrnl" 												# jrnl is a simple, fast, and powerful command-line note taking tool
 brew "reattach-to-user-namespace"							# Reattach process (e.g., tmux) to background
-brew "httpie"												# httpie is a CLI, cURL-like tool for humans.
 
 cask "adoptopenjdk13", args: { appdir: "~/Applications" }   # Java Development Kit
 cask "android-platform-tools" 								# Android SDK Platform-Tools

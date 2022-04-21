@@ -56,9 +56,16 @@ done 2>/dev/null &
 dot_sub_install "$DOTFILES"/install/install-zsh.sh
 dot_sub_install "$DOTFILES"/install/install-fonts.sh
 dot_sub_install "$DOTFILES"/install/install-keys.sh
-dot_sub_install "$DOTFILES"/install/install-osx.sh
+
+if [[ "$(uname)" == "Linux" ]]; then
+	dot_sub_install "$DOTFILES"/install/install-fedora.sh
+elif [[ "$(uname)" == "Darwin" ]]; then
+	dot_sub_install "$DOTFILES"/install/install-osx.sh
+fi
 
 dot_is_installed git && dot_install git
 dot_is_installed nvim && dot_install nvim
 dot_is_installed tmux && dot_install tmux
 dot_is_installed npm && dot_install javascript
+
+# sudo reboot
