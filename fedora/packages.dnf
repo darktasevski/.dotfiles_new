@@ -81,7 +81,6 @@ install java-1.8.0-openjdk.x86_64
 install java-11-openjdk.x86_64
 install java-latest-openjdk.x86_64
 install mediainfo
-install anki
 install dropbox
 install nautilus-dropbox 
 install vlc

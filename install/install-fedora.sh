@@ -44,9 +44,6 @@ sudo dnf -y install bandwhich
 sudo dnf -y copr enable kopfkrieg/diff-so-fancy
 sudo dnf -y install diff-so-fancy
 
-sudo dnf -y copr enable the4runner/firefox-dev
-sudo dnf -y install firefox-dev
-
 sudo dnf -y copr enable varlad/onefetch
 sudo dnf -y install onefetch
 
@@ -98,3 +95,6 @@ espanso start 				# Start espanso
 pip3 install td-watson
 pip3 install tmuxp
 pip3 install Pygments
+
+# Switch to dark theme
+gsettings set org.gnome.desktop.interface gtk-theme Adwaita-dark
