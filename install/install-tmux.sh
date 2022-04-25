@@ -4,10 +4,12 @@ if [ ! -d "$TMUXDIR" ]; then
 	mkdir "$TMUXDIR"
 fi
 
-git clone https://github.com/tmux-plugins/tpm "$TMUXDIR/plugins/tpm"
+rm "$DOTFILES/tmux/tmux.conf" >/dev/null
+cp "$DOTFILES/tmux/tmuxconfig_template" "$DOTFILES/tmux/tmux.conf"
+sed -i "s|__TMUXDIR__|${TMUXDIR}|g" "$DOTFILES"/tmux/tmux.conf
 ln -sf "$DOTFILES/tmux/tmux.conf" "$TMUXDIR"
 
-sed -i "s|__TMUXDIR__|${TMUXDIR}|g" "$DOTFILES"/tmux/tmux.conf
+git clone https://github.com/tmux-plugins/tpm "$TMUXDIR/plugins/tpm"
 
 tmux source "$TMUXDIR"/tmux.conf
 # Fix for tmp crashing because TMUX_PLUGIN_MANAGER_PATH is not defined
