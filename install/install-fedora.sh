@@ -23,10 +23,12 @@ sudo dnf config-manager --set-enabled fedora-cisco-openh264
 sudo dnf groupupdate multimedia --setop="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
 sudo dnf groupupdate sound-and-video
 
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
 sudo dnf update --refresh
 
+sudo dnf install \*-firmware\
 sudo dnf -y install google-chrome-stable
-sudo dnf -y install akmod-nvidia nvidia-settings kernel-devel
 sudo dnf -y install gstreamer1-plugin-openh264 mozilla-openh264
 
 sudo dnf -y shell "$DOTFILES"/fedora/packages.dnf
@@ -49,6 +51,12 @@ sudo dnf -y install onefetch
 
 sudo dnf -y copr enable bugzy/lector
 sudo dnf -y install lector
+
+sudo dnf -y copr enable t0xic0der/nvidia-auto-installer-for-fedora
+sudo dnf -y install nvautoinstall
+
+sudo dnf -y copr enable joseexposito/touchegg
+sudo dnf -y install touchegg
 
 # curl --silent --location https://dl.yarnpkg.com/rpm/yarn.repo | sudo tee /etc/yum.repos.d/yarn.repo
 # sudo dnf -y install yarn
@@ -82,6 +90,8 @@ sudo dnf update --refresh
 sudo dnf -y install snapd
 sudo ln -s /var/lib/snapd/snap /snap
 
+sudo dnf clean all
+
 sudo snap install ngrok
 sudo snap install espanso --classic --channel=latest/edge
 sudo snap install geogebra-discovery
@@ -98,3 +108,6 @@ pip3 install Pygments
 
 # Switch to dark theme
 gsettings set org.gnome.desktop.interface gtk-theme Adwaita-dark
+
+ln -sfv "$DOTFILES"/fedora/set_screen.desktop "$HOME"/.config/autostart/set_screen.desktop
+ln -sfv "$DOTFILES"/fedora/XCompose "$HOME"/.XCompose

@@ -88,6 +88,13 @@ install spotify
 install transmission
 install steam
 install geary
+install fedy
 install gparted
 install telegram
 install gnome-tweak-tool
+install gnome-extensions-app
+install cargo
+install cronie
+install dnf-utils
+install breeze-cursor-theme 
+install oxygen-cursor-themes

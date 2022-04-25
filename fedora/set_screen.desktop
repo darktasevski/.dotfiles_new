@@ -1,0 +1,4 @@
+[Desktop Entry]
+Name=set_screen
+Exec=/bin/bash -c /home/dtasevski/.dotfiles/fedora/set_screen.sh
+Type=Application
