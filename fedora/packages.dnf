@@ -96,5 +96,9 @@ install gnome-extensions-app
 install cargo
 install cronie
 install dnf-utils
+install weechat
 install breeze-cursor-theme 
 install oxygen-cursor-themes
+install mpv 
+install mpv-libs
+install alsa-tools

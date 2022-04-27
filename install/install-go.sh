@@ -23,6 +23,7 @@ binaries=(
 	mvdan.cc/unparam
 	github.com/fatih/motion
 	github.com/raviqqe/muffet
+	github.com/cheat/cheat/cmd/cheat
 )
 
 function install_go_binaries() {

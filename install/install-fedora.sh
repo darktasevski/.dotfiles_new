@@ -8,9 +8,9 @@ sudo dnf -y upgrade --refresh
 sudo dnf groupupdate core
 
 # Import RPM Fusion Free
-sudo dnf -y install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+sudo dnf -y install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-"$(rpm -E %fedora)".noarch.rpm
 # Import RPM Fusion Nonfree
-sudo dnf -y install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+sudo dnf -y install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-"$(rpm -E %fedora)".noarch.rpm
 
 sudo dnf -y install dnf-plugins-core
 # extra Fedora repositories
@@ -58,6 +58,10 @@ sudo dnf -y install nvautoinstall
 sudo dnf -y copr enable joseexposito/touchegg
 sudo dnf -y install touchegg
 
+sudo dnf -y copr enable dawid/better_fonts
+# this might fail since some font seems to be missing from the repo
+sudo dnf install fontconfig-enhanced-defaults fontconfig-font-replacements --skip-broken
+
 # curl --silent --location https://dl.yarnpkg.com/rpm/yarn.repo | sudo tee /etc/yum.repos.d/yarn.repo
 # sudo dnf -y install yarn
 
@@ -75,6 +79,8 @@ sudo dnf -y localinstall teams-1.5.00.10453-1.x86_64.rpm
 
 wget https://www.expressvpn.works/clients/linux/expressvpn-3.21.0.2-1.x86_64.rpm
 sudo dnf -y localinstall expressvpn-3.21.0.2-1.x86_64.rpm
+
+# @see https://gist.github.com/shaybensasson/3e8e49af92d7e5013fc77da22bd3ae4c for Obsidian install
 
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
@@ -105,9 +111,12 @@ espanso start 				# Start espanso
 pip3 install td-watson
 pip3 install tmuxp
 pip3 install Pygments
+pip3 install PyQt6 --user
 
 # Switch to dark theme
 gsettings set org.gnome.desktop.interface gtk-theme Adwaita-dark
+
+curl -s "https://raw.githubusercontent.com/saint-13/Linux_Dynamic_Wallpapers/main/Easy_Install.sh" | sudo bash
 
 ln -sfv "$DOTFILES"/fedora/set_screen.desktop "$HOME"/.config/autostart/set_screen.desktop
 ln -sfv "$DOTFILES"/fedora/XCompose "$HOME"/.XCompose

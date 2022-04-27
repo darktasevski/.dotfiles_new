@@ -265,6 +265,15 @@ switch_display_input() {
 	$DOTFILES/bash/scripts/ddcctl -d $DISPLAY_NUM -i $DVI2_INPUT_NUM
 }
 
+switch_display_input_linux() {
+	local DISPLAY_NUM=1
+	local DVI2_INPUT_NUM=4
+	local input_source_address=0x60
+	local HDMI_2_value=18
+	local monitor_id=dev:/dev/i2c-3
+	sudo ddccontrol -r $input_source_address -w $HDMI_2_value $monitor_id
+}
+
 promptspeed() {
 	for i in $(seq 1 10); do /usr/bin/time zsh -i -c exit; done
 }
@@ -573,17 +582,17 @@ function jenv() {
 	return 0
 }
 
-function go() {
-	unfunction "$0"
-	if [[ -x "$(command -v go)" ]]; then
-		GO_WHICH=$(brew --prefix golang)
+# function go() {
+# 	unfunction "$0"
+# 	if [[ -x "$(command -v go)" ]]; then
+# 		GO_WHICH=$(brew --prefix golang)
 
-		export GOPATH="${HOME}/.go"
-		export GOROOT="${GO_WHICH}/libexec"
-		export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
-	fi
+# 		export GOPATH="${HOME}/.go"
+# 		export GOROOT="${GO_WHICH}/libexec"
+# 		export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
+# 	fi
 
-	$0 "$@"
+# 	$0 "$@"
 
-	return 0
-}
+# 	return 0
+# }
