@@ -160,6 +160,12 @@ elif [[ "$(expr substr $(uname -s) 1 5)" == "Linux" ]]; then
 	# +---------+
 
 	alias port="netstat -tulpn | grep"
+
+	# +---------+
+	# |   VPN   |
+	# +---------+
+
+	alias vpnui="/opt/cisco/anyconnect/bin/vpnui" # Start Cisco AnyConnect client
 fi
 
 # +--------+

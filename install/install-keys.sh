@@ -15,3 +15,6 @@ if [[ -d "$SECURE_STORAGE" ]]; then
 else
 	echo "No secure storage found"
 fi
+
+# @see https://docs.github.com/en/authentication/managing-commit-signature-verification/associating-an-email-with-your-gpg-key
+# to add additional uid(s) to the existing GPG key

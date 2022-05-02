@@ -68,10 +68,12 @@ if [[ "$(uname)" == "Darwin" ]]; then
 else
 	export QTWEBENGINE_CHROMIUM_FLAGS="--no-sandbox" # needed for Anki QT5 to work. Should be removed once QT6version is fixed. @see https://github.com/ankitects/anki/issues/1814
 	USER_BIN="$HOME/.local/bin:$PATH"
-	export PATH=$PATH:${LOCAL_BIN_PATH}:${LOCAL_SBIN_PATH}:${USER_BIN}:$PATH
+	export VOLTA_HOME="$HOME/.volta"
+	VOLTA_BIN="$VOLTA_HOME/bin"
+	export PATH=$PATH:${LOCAL_BIN_PATH}:${LOCAL_SBIN_PATH}:${USER_BIN}:${VOLTA_BIN}:$PATH
 fi
 
-export NPM_PATH=$HOME/.n/bin
+export NPM_PATH="$HOME/.n/bin:$PATH"
 
 if ! command -v jenv > /dev/null; then
 	JENV_PATH="$HOME/.jenv/bin:$PATH"

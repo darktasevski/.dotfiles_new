@@ -49,9 +49,6 @@ sudo dnf -y install diff-so-fancy
 sudo dnf -y copr enable varlad/onefetch
 sudo dnf -y install onefetch
 
-sudo dnf -y copr enable bugzy/lector
-sudo dnf -y install lector
-
 sudo dnf -y copr enable t0xic0der/nvidia-auto-installer-for-fedora
 sudo dnf -y install nvautoinstall
 
@@ -62,17 +59,14 @@ sudo dnf -y copr enable dawid/better_fonts
 # this might fail since some font seems to be missing from the repo
 sudo dnf install fontconfig-enhanced-defaults fontconfig-font-replacements --skip-broken
 
-# curl --silent --location https://dl.yarnpkg.com/rpm/yarn.repo | sudo tee /etc/yum.repos.d/yarn.repo
-# sudo dnf -y install yarn
-
 wget https://downloads.slack-edge.com/releases/linux/4.21.1/prod/x64/slack-4.21.1-0.1.fc21.x86_64.rpm
 sudo dnf -y localinstall slack-4.21.1-0.1.fc21.x86_64.rpm
 
 wget https://zoom.us/client/latest/zoom_x86_64.rpm 
-sudo dnf -y localinstall zoom_x86_64.rpm 
+sudo dnf -y localinstall zoom_x86_64.rpm
 
 wget https://download.cdn.viber.com/desktop/Linux/viber.rpm
-sudo dnf -y localinstall viber.rpm 
+sudo dnf -y localinstall viber.rpm
 
 wget https://packages.microsoft.com/yumrepos/ms-teams/teams-1.5.00.10453-1.x86_64.rpm
 sudo dnf -y localinstall teams-1.5.00.10453-1.x86_64.rpm
@@ -104,6 +98,7 @@ sudo snap install geogebra-discovery
 sudo snap install postman
 sudo snap install webstorm --classic
 sudo snap install intellij-idea-ultimate --classic
+sudo snap install authy
 
 espanso service register    # Register espanso as a systemd service (required only once)
 espanso start 				# Start espanso
@@ -111,10 +106,16 @@ espanso start 				# Start espanso
 pip3 install td-watson
 pip3 install tmuxp
 pip3 install Pygments
+pip3 install caffeinate 	# awake
 pip3 install PyQt6 --user
+pip3 install fuzzywuzzy --user
+pip3 install algoliasearch --user
+pip3 install simpleeval --user
+pip3 install pint --user
 
 # Switch to dark theme
 gsettings set org.gnome.desktop.interface gtk-theme Adwaita-dark
+# Additionally install Nord-darker and MacOsBigSur icons/cursors
 
 curl -s "https://raw.githubusercontent.com/saint-13/Linux_Dynamic_Wallpapers/main/Easy_Install.sh" | sudo bash
 

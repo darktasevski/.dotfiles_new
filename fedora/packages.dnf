@@ -102,3 +102,11 @@ install oxygen-cursor-themes
 install mpv 
 install mpv-libs
 install alsa-tools
+install snapper
+install gnome-shell-extension-appindicator
+install libappindicator
+install nss-utils
+install ulauncher
+install translate-shell
+install cataclysm-dda
+install yank

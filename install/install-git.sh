@@ -27,3 +27,5 @@ ln -sfv "$DOTFILES"/git/gitattributes_global "$HOME"/.gitattributes_global
 
 # Set the global hooks
 # git config --global init.templatedir "$DOTFILES/git/templates"
+# Change user.email locally for a single project
+# git config user.email darko.tasevski@workmail.com 
