@@ -53,9 +53,9 @@ export N_PREFIX="$HOME/.n"
 
 if [[ "$(uname)" == "Darwin" ]]; then
 	# Smart TV stuff
-	export LG_WEBOS_TV_SDK_HOME="/opt/webOS_TV_SDK"
-	ARES_BIN_PATH=$PATH:/opt/webOS_TV_SDK/CLI/bin # LG webOS ares-cli - (it needs to be installed first)
-	TIZEN_STUFF_PATH=${HOME}/Tizen/SDK/tools/ide/bin:${HOME}/Tizen/SDK/tools:${HOME}/Tizen/SDK/emulator/binF
+	# export LG_WEBOS_TV_SDK_HOME="/opt/webOS_TV_SDK"
+	# ARES_BIN_PATH=$PATH:/opt/webOS_TV_SDK/CLI/bin # LG webOS ares-cli - (it needs to be installed first)
+	# TIZEN_STUFF_PATH=${HOME}/Tizen/SDK/tools/ide/bin:${HOME}/Tizen/SDK/tools:${HOME}/Tizen/SDK/emulator/binF
 	# Python
 	PY_3_PATH="$HOME/Library/Python/3.7/bin:$PATH"
 	# Java
@@ -64,13 +64,11 @@ if [[ "$(uname)" == "Darwin" ]]; then
 	RBENV_PATH=$HOME/.rbenv/bin
 	RUBY_GEMS=/usr/local/lib/ruby/gems/2.7.0/bin
 	# PATH
-	export PATH=$PATH:${LOCAL_BIN_PATH}:${LOCAL_SBIN_PATH}:${PY_3_PATH}:${ARES_BIN_PATH}:${RUBY_GEMS}:${MAVEN_HOME}:$PATH
+	export PATH=$PATH:${LOCAL_BIN_PATH}:${LOCAL_SBIN_PATH}:${PY_3_PATH}:${RUBY_GEMS}:${MAVEN_HOME}:$PATH
 else
 	export QTWEBENGINE_CHROMIUM_FLAGS="--no-sandbox" # needed for Anki QT5 to work. Should be removed once QT6version is fixed. @see https://github.com/ankitects/anki/issues/1814
 	USER_BIN="$HOME/.local/bin:$PATH"
-	export VOLTA_HOME="$HOME/.volta"
-	VOLTA_BIN="$VOLTA_HOME/bin"
-	export PATH=$PATH:${LOCAL_BIN_PATH}:${LOCAL_SBIN_PATH}:${USER_BIN}:${VOLTA_BIN}:$PATH
+	export PATH=$PATH:${LOCAL_BIN_PATH}:${LOCAL_SBIN_PATH}:${USER_BIN}:$PATH
 fi
 
 export NPM_PATH="$HOME/.n/bin:$PATH"
@@ -78,6 +76,11 @@ export NPM_PATH="$HOME/.n/bin:$PATH"
 if ! command -v jenv > /dev/null; then
 	JENV_PATH="$HOME/.jenv/bin:$PATH"
 	export JENV_ROOT=/usr/local/opt/jenv
+fi
+
+if ! command -v volta > /dev/null; then
+	export VOLTA_HOME="$HOME/.volta"
+	export PATH="$VOLTA_HOME/bin:$PATH"
 fi
 
 # git

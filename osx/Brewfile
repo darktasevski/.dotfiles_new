@@ -77,6 +77,7 @@ brew "imagemagick"  										# ImageMagick is a software suite to create, edit,
 brew "muffet" 												# website link checker which scrapes and inspects all pages in a website recursively
 brew "jrnl" 												# jrnl is a simple, fast, and powerful command-line note taking tool
 brew "reattach-to-user-namespace"							# Reattach process (e.g., tmux) to background
+brew "cataclysm"							                # 
 
 cask "adoptopenjdk13", args: { appdir: "~/Applications" }   # Java Development Kit
 cask "android-platform-tools" 								# Android SDK Platform-Tools
@@ -109,6 +110,8 @@ cask "viber"
 cask "zoom"
 cask "alfred"
 cask "lulu"
+cask "expressvpn"
+cask "steam"
 cask "suspicious-package", args: { appdir: "~/Applications" }
 cask "the-unarchiver", args: { appdir: "~/Applications" }   # Unarchiver is a free utility for extracting archives
 cask "transmission", args: { appdir: "~/Applications" }     # Transmission is a bittorrent client

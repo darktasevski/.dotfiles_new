@@ -35,6 +35,11 @@ fi
 # Remove outdated versions from the cellar.
 brew cleanup
 
+# Install rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+source $HOME/.cargo/env
+
 # Save screenshots to the Pictures/Screenshots
 mkdir -p "$HOME"/Pictures/Screenshots
 defaults write com.apple.screencapture location -string "${HOME}/Pictures/Screenshots"

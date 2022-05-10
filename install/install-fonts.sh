@@ -6,6 +6,6 @@ if [[ -d "$FONTSDIR" ]]; then
 		fc-cache -v
 	elif [[ "$(uname)" == "Darwin" ]]; then
 		# https://stackoverflow.com/a/33868938/7453363
-		cp "$FONTSDIR"/* "$HOME"/Library/Fonts/
+		sudo cp -R "$FONTSDIR"/* "$HOME"/Library/Fonts/
 	fi
 fi

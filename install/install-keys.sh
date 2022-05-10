@@ -18,3 +18,16 @@ fi
 
 # @see https://docs.github.com/en/authentication/managing-commit-signature-verification/associating-an-email-with-your-gpg-key
 # to add additional uid(s) to the existing GPG key
+
+# to export gpg keys data:
+# gpg --export-secret-keys > sec.gpg
+# to import gpg keys data on new machine
+# gpg --import sec.gpg
+
+# to set trust level of imported keys
+# gpg --edit-key {KEY} trust quit
+  # enter 5<RETURN> (I trust ultimately)
+  # enter y<RETURN> (Really set this key to ultimate trust - Yes)
+
+# restart gpg agent
+# gpgconf --kill gpg-agent
