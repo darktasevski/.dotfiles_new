@@ -42,8 +42,15 @@ let g:delve_tracepoint_sign = ""
 nnoremap <silent> <leader>db <cmd>bp <bar>bd #<cr> 
 
 " PYTHON PROVIDERS
-let g:python3_host_prog = '/usr/local/bin/python3' " -- Set python 3 provider
 let g:python_host_prog = '/usr/bin/python2' " --- Set python 2 provider
+
+if system('uname -s') == "Darwin\n"
+	" OSX
+	let g:python3_host_prog = '/usr/local/bin/python3' " -- Set python 3 provider (OSX)
+else
+	" Linux
+	let g:python3_host_prog = '/usr/bin/python3' " -- Set python 3 provider (Fedora)
+endif
 
 " Coc extensions
 let g:coc_global_extensions = [

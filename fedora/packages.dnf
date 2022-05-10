@@ -110,3 +110,4 @@ install ulauncher
 install translate-shell
 install cataclysm-dda
 install yank
+install urlview
