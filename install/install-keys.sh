@@ -18,8 +18,10 @@ fi
 
 # @see https://docs.github.com/en/authentication/managing-commit-signature-verification/associating-an-email-with-your-gpg-key
 # to add additional uid(s) to the existing GPG key
+# then, regenerate the gpg and update Github/Gitlab (@see https://stackoverflow.com/a/69564329)
+# gpg --armor --export KEY_ID
 
-# to export gpg keys data:
+# to export gpg keys data (in order to inport on another machine):
 # gpg --export-secret-keys > sec.gpg
 # to import gpg keys data on new machine
 # gpg --import sec.gpg

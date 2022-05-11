@@ -79,6 +79,7 @@ brew "jrnl" 												# jrnl is a simple, fast, and powerful command-line note
 brew "reattach-to-user-namespace"							# Reattach process (e.g., tmux) to background
 brew "cataclysm"							                # Cataclysm is a text adventure game
 brew "urlview"							                	# 
+brew "shellcheck"							                # ShellCheck is a static analysis tool for shell scripts 
 
 cask "adoptopenjdk13", args: { appdir: "~/Applications" }   # Java Development Kit
 cask "android-platform-tools" 								# Android SDK Platform-Tools
