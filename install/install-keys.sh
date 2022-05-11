@@ -31,5 +31,8 @@ fi
   # enter 5<RETURN> (I trust ultimately)
   # enter y<RETURN> (Really set this key to ultimate trust - Yes)
 
+# update gpg-agent.conf on OSX
+# echo "pinentry-program /opt/homebrew/bin/pinentry-mac" >> ~/.gnupg/gpg-agent.conf 
 # restart gpg agent
 # gpgconf --kill gpg-agent
+# killall gpg-agent
