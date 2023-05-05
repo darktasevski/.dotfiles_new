@@ -76,18 +76,15 @@ brew "tmux"  												# Tmux is a terminal multiplexer
 brew "tmuxp"  												# Tmux session manager
 brew "imagemagick"  										# ImageMagick is a software suite to create, edit, compose, or convert bitmap images
 brew "muffet" 												# website link checker which scrapes and inspects all pages in a website recursively
-brew "jrnl" 												# jrnl is a simple, fast, and powerful command-line note taking tool
 brew "reattach-to-user-namespace"							# Reattach process (e.g., tmux) to background
-brew "cataclysm"							                # Cataclysm is a text adventure game
 brew "urlview"							                	# 
 brew "shellcheck"							                # ShellCheck is a static analysis tool for shell scripts 
 
 cask "adoptopenjdk13", args: { appdir: "~/Applications" }   # Java Development Kit
 cask "android-platform-tools" 								# Android SDK Platform-Tools
 cask "betterzip", args: { appdir: "~/Applications" } 		# BetterZip is a GUI for 7-Zip
-cask "joshjon-nocturnal" 									# Nocturnal is a dark theme for macOS
-cask "mediainfo"											# MediaInfo is a free and open-source utility for gathering technical metadata of multimedia files
-cask "ngrok" 												# ngrok is a free, open-source, secure tunneling service
+# cask "mediainfo"											# MediaInfo is a free and open-source utility for gathering technical metadata of multimedia files
+# cask "ngrok" 												# ngrok is a free, open-source, secure tunneling service
 cask "anki"													# Anki is a free, open-source, cross-platform flashcard application
 cask "open-in-code" 										# Open in Code is a finder addon to open selected file/directory in the VS Code
 cask "1password" 											# password manager
@@ -104,7 +101,7 @@ cask "postman" 												# Collaboration platform for API development
 cask "spotify"
 cask "slack"
 cask "sketch"
-cask "affinity-designer"
+# cask "affinity-designer"
 cask "raindropio"
 cask "visual-studio-code"
 cask "webstorm"
@@ -114,12 +111,16 @@ cask "telegram"
 cask "zoom"
 cask "alfred"
 cask "lulu"
-cask "expressvpn"
-cask "breaktimer"
-cask "steam"
+cask "rewind", args: { appdir: "~/Applications" }
+cask "rocket", args: { appdir: "~/Applications" }
+cask "steam", args: { appdir: "~/Applications" }
+cask "notion", args: { appdir: "~/Applications" }
+casl "cleanshot", args: { appdir: "~/Applications" }
+cask "little-snitch", args: { appdir: "~/Applications" }
 cask "suspicious-package", args: { appdir: "~/Applications" }
 cask "the-unarchiver", args: { appdir: "~/Applications" }   # Unarchiver is a free utility for extracting archives
 cask "transmission", args: { appdir: "~/Applications" }     # Transmission is a bittorrent client
+cask "altair-graphql-client", args: { appdir: "~/Applications" } 
 # cask "flying-carpet" 										# cross platform file transfer over ad-hoc wifi
 # cask "mongodb-compass"
 # cask "grammarly"
