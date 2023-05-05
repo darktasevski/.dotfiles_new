@@ -73,12 +73,12 @@ fi
 
 export NPM_PATH="$HOME/.n/bin:$PATH"
 
-if ! command -v jenv > /dev/null; then
+if ! command -v jenv >/dev/null; then
 	JENV_PATH="$HOME/.jenv/bin:$PATH"
 	export JENV_ROOT=/usr/local/opt/jenv
 fi
 
-if ! command -v volta > /dev/null; then
+if ! command -v volta >/dev/null; then
 	export VOLTA_HOME="$HOME/.volta"
 	export PATH="$VOLTA_HOME/bin:$PATH"
 fi
@@ -88,3 +88,6 @@ export GIT_REVIEW_BASE="master" # See gitconfig
 GIT_EMAIL="darktasevski@gmail.com"
 GIT_USER="Darkø Tasevski"
 . "$HOME/.cargo/env"
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export PATH="$VOLTA_HOME/bin:$PATH"

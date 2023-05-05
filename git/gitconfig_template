@@ -43,6 +43,7 @@
 	untracked = cyan
 [push]
 	default = current # When pushing code, always push only your current branch to a branch of the same name
+	autoSetupRemote = true # create a new upstream branch for your local branch automatically if it doesn't exist yet
 	followTags = true # Make `git push` push relevant annotated tags when pushing branches out.
 [pull]
     rebase = true
@@ -68,6 +69,10 @@
   # instead of opening all files:
   # git reviewone foo.js bar.js
     reviewone = !nvim -p +\"tabdo Gdiff $GIT_REVIEW_BASE\" +\"let g:gitgutter_diff_base = '$GIT_REVIEW_BASE'\"
+	rank = shortlog -s -n --no-merges
+	mainbranch = "!git remote show origin | sed -n '/HEAD branch/s/.*: //p'"
+	synced = "!git pull origin $(git mainbranch) --rebase"
+	squash = "!git rebase -v -i $(git mainbranch)"
 
 	aliases = config --get-regexp alias # List aliases
     com = commit --message
@@ -96,6 +101,7 @@
     b = branch -v
     c = clone --recursive # Clone a repository including all submodules
     cm = checkout master
+	cn = checkout main
     co = checkout
     aa = add .
     difs = diff --ignore-all-space

@@ -8,6 +8,7 @@ tap "homebrew/services"
 tap "homebrew/cask-fonts"
 
 brew "bat" 													# cat, but with syntax highlighting
+brew "nss" 													# Network Security Services
 brew "ack" 													# Search tool like grep, but optimized for programmers
 brew "adns" 												# C/C++ resolver library and DNS resolver utilities
 brew "awscli" 												# Official Amazon AWS command-line interface
