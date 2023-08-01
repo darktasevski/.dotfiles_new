@@ -1,10 +1,13 @@
 [user]
     email = <email> 
     name = <name>
+  	signingkey = <ssh-key>
 [gpg]
-	program = gpg
+  	format = ssh
+[gpg "ssh"]
+  	program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
 [commit]
-	gpgsign = true # https://help.github.com/articles/signing-commits-using-gpg/
+  	gpgsign = true
 [core]
     editor = nvim
     pager = diff-so-fancy | less --tabs=4 -RFX

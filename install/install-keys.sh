@@ -1,8 +1,13 @@
 #!/bin/bash
 
-if [[ -d "$SECURE_STORAGE" ]]; then
-	ln -sfv "$SECURE_STORAGE"/ssh "$HOME"/.ssh
-	ln -sfv "$SECURE_STORAGE"/gnupg "$HOME"/.gnupg
+if [[ -d "$DOTFILES/ssh" ]]; then
+	ln -sfv "$DOTFILES/ssh" "$HOME"/.ssh
+else
+	echo "No ssh data found"
+fi
+
+if [[ -d "$DOTFILES/gnupg" ]]; then
+	ln -sfv "$DOTFILES/gnupg" "$HOME"/.gnupg
 
 	# @see https://gist.github.com/oseme-techguy/bae2e309c084d93b75a9b25f49718f85
 	# To fix the " gpg: WARNING: unsafe permissions on homedir '/home/path/to/user/.gnupg' " error
@@ -13,7 +18,7 @@ if [[ -d "$SECURE_STORAGE" ]]; then
 	chmod 600 ~/.gnupg/*
 	chmod 700 ~/.gnupg
 else
-	echo "No secure storage found"
+	echo "No gnupg data found"
 fi
 
 # @see https://docs.github.com/en/authentication/managing-commit-signature-verification/associating-an-email-with-your-gpg-key
@@ -28,11 +33,11 @@ fi
 
 # to set trust level of imported keys
 # gpg --edit-key {KEY} trust quit
-  # enter 5<RETURN> (I trust ultimately)
-  # enter y<RETURN> (Really set this key to ultimate trust - Yes)
+# enter 5<RETURN> (I trust ultimately)
+# enter y<RETURN> (Really set this key to ultimate trust - Yes)
 
 # update gpg-agent.conf on OSX
-# echo "pinentry-program /opt/homebrew/bin/pinentry-mac" >> ~/.gnupg/gpg-agent.conf 
+# echo "pinentry-program /opt/homebrew/bin/pinentry-mac" >> ~/.gnupg/gpg-agent.conf
 # restart gpg agent
 # gpgconf --kill gpg-agent
 # killall gpg-agent

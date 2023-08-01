@@ -34,7 +34,6 @@ export TMUXDIR="$XDG_CONFIG_HOME/tmux"
 export VIMCONFIG="$XDG_CONFIG_HOME/nvim"
 export NVIM_PYTHON_LOG_FILE_PATH="~$HOME"/.nvimlog
 export FONTSDIR="$HOME/.fonts"
-export SECURE_STORAGE="$HOME/KEYS"
 export HISTFILE="$ZDOTDIR/.zhistory" # History filepath
 export HISTSIZE=10000                # Maximum events for internal history
 export SAVEHIST=10000                # Maximum events in history file
@@ -87,7 +86,7 @@ fi
 export GIT_REVIEW_BASE="master" # See gitconfig
 GIT_EMAIL="darktasevski@gmail.com"
 GIT_USER="Darkø Tasevski"
-. "$HOME/.cargo/env"
+#. "$HOME/.cargo/env"
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="$VOLTA_HOME/bin:$PATH"

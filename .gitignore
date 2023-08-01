@@ -1,3 +1,7 @@
 git/gitconfig
 tmux/tmux.conf
 *.rpm
+.history
+known_hosts
+gnupg/*
+!gnupg/.gpg-agent.conf

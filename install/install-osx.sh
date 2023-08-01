@@ -20,10 +20,12 @@ fi
 brew update
 brew upgrade
 
-## Node Version Manager
-if ! command -v n >/dev/null; then
-	brew install n
-	sudo n latest
+if ! command -v volta >/dev/null; then
+	curl https://get.volta.sh | bash
+fi
+
+if ! command -v yarn >/dev/null; then
+	curl -o- -L https://yarnpkg.com/install.sh | bash
 fi
 
 brew bundle install --verbose --file="$DOTFILES"/osx/Brewfile
@@ -36,9 +38,9 @@ fi
 brew cleanup
 
 # Install rust
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 
-source $HOME/.cargo/env
+source "$HOME"/.cargo/env
 
 # Save screenshots to the Pictures/Screenshots
 mkdir -p "$HOME"/Pictures/Screenshots

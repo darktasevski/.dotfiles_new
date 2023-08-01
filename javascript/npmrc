@@ -1,0 +1,6 @@
+strict-ssl=true
+@module-federation:registry=https://r.privjs.com
+//registry.npmjs.org/:_authToken=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
+//r.privjs.com/:_authToken=JWT_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyVVVJRCI6ImI1NjM1NDdmLTQ5NTQtNGVkOS04ZDI4LTkzZjFlYjE2YjgwYyIsInVzZXJuYW1lIjoiZGFya28iLCJpYXQiOjE2NzAzMzQwMTV9.itmCA6WviKLcGwahuV-K2cvDtDkM_R7o_NjZrdzWu0M
+@:registry=/projects//packages/npm/
+/projects//packages/npm/:_authToken=

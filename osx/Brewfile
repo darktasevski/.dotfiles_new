@@ -23,7 +23,7 @@ brew "zimg" 												# Image format converter
 brew "ffmpeg" 												# A complete, cross-platform solution to record, convert and stream audio and video
 brew "findutils"  											# GNU find, locate, updatedb, and xargs utilities
 brew "folly" 												# C++14 compatible library for modern C++
-brew "git" 													
+brew "git"
 brew "git-crypt" 											# Encrypt and decrypt files inside a git repository
 brew "git-extras" 											# Extra Git features
 brew "git-lfs" 												# Large File Support for Git
@@ -70,15 +70,15 @@ brew "federico-terzi/espanso/espanso" 						# Cross-platform Text Expander writt
 brew "fzf" 													# A command-line fuzzy finder
 brew "starship"												# The minimal, blazing-fast, and infinitely customizable prompt for any shell!
 brew "neovim"												# Neovim is a text editor focused on extensibility and agility
-brew "n"													# node version manager
 brew "yarn"  												# Yarn is a package manager for Node.js
 brew "tmux"  												# Tmux is a terminal multiplexer
 brew "tmuxp"  												# Tmux session manager
 brew "imagemagick"  										# ImageMagick is a software suite to create, edit, compose, or convert bitmap images
 brew "muffet" 												# website link checker which scrapes and inspects all pages in a website recursively
 brew "reattach-to-user-namespace"							# Reattach process (e.g., tmux) to background
-brew "urlview"							                	# 
-brew "shellcheck"							                # ShellCheck is a static analysis tool for shell scripts 
+brew "urlview"							                	#
+brew "shellcheck"							                # ShellCheck is a static analysis tool for shell scripts
+brew "remotemobprogramming/brew/mob"						# mob is a tool to manage mob programming sessions directly from the command line
 
 cask "adoptopenjdk13", args: { appdir: "~/Applications" }   # Java Development Kit
 cask "android-platform-tools" 								# Android SDK Platform-Tools
@@ -94,9 +94,8 @@ cask "dropbox" 												# Dropbox is a cloud storage service
 cask "geogebra"												# Solve, save and share math problems, graph functions, etc
 cask "iina" 												# video player
 cask "iterm2"												# iTerm2 is a terminal emulator
-cask "warp"													# Rust-based terminal
 cask "mathpix-snipping-tool" 								# Scanner app for math and science
-cask "obsidian" 											# Knowledge base that works on top of a local folder of plain text Markdown files
+# cask "obsidian" 											# Knowledge base that works on top of a local folder of plain text Markdown files
 cask "postman" 												# Collaboration platform for API development
 cask "spotify"
 cask "slack"
@@ -108,23 +107,20 @@ cask "webstorm"
 cask "intellij-idea"
 cask "viber"
 cask "telegram"
-cask "zoom"
+# cask "zoom"
 cask "alfred"
 cask "lulu"
 cask "rewind", args: { appdir: "~/Applications" }
 cask "rocket", args: { appdir: "~/Applications" }
 cask "steam", args: { appdir: "~/Applications" }
 cask "notion", args: { appdir: "~/Applications" }
-casl "cleanshot", args: { appdir: "~/Applications" }
+cask "cleanshot", args: { appdir: "~/Applications" }
 cask "little-snitch", args: { appdir: "~/Applications" }
 cask "suspicious-package", args: { appdir: "~/Applications" }
 cask "the-unarchiver", args: { appdir: "~/Applications" }   # Unarchiver is a free utility for extracting archives
 cask "transmission", args: { appdir: "~/Applications" }     # Transmission is a bittorrent client
-cask "altair-graphql-client", args: { appdir: "~/Applications" } 
-# cask "flying-carpet" 										# cross platform file transfer over ad-hoc wifi
-# cask "mongodb-compass"
-# cask "grammarly"
-# cask "sloth"
+cask "whatsapp", args: { appdir: "~/Applications" }     # Transmission is a bittorrent client
+cask "grammarly"
 # ## Install Fonts
 cask "font-iosevka"
 cask "font-inconsolata"
@@ -133,13 +129,11 @@ cask "font-hack-nerd-font"
 cask "font-jetbrains-mono"
 cask "font-jetbrains-mono-nerd-font"
 # ## Install developer friendly quick look plugins; see https://github.com/sindresorhus/quick-look-plugins
-cask "qlcolorcode", args: { appdir: "~/Applications" }
-cask "qlimagesize", args: { appdir: "~/Applications" }
 cask "qlmarkdown", args: { appdir: "~/Applications" }
-cask "qlprettypatch", args: { appdir: "~/Applications" }
 cask "qlstephen", args: { appdir: "~/Applications" }
 cask "qlvideo", args: { appdir: "~/Applications" }
 cask "quicklook-csv", args: { appdir: "~/Applications" }
 cask "quicklook-json", args: { appdir: "~/Applications" }
-cask "quicklookase", args: { appdir: "~/Applications" }
 cask "webpquicklook", args: { appdir: "~/Applications" }
+cask "apparency", args: { appdir: "~/Applications" }
+cask "syntax-highlight", args: { appdir: "~/Applications", no-quarantine: true }
