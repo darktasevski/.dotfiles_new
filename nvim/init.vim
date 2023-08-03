@@ -72,6 +72,8 @@ let g:coc_global_extensions = [
 " \ 'coc-markmap',
 " \ 'coc-sh',
 
+syntax enable
+
 let g:vim_markdown_folding_disabled = 1
 
 let g:oceanic_next_terminal_bold = 1
@@ -85,7 +87,6 @@ let g:airline_theme='oceanicnext'
 " | general binding |
 " +-----------------+
 
-syntax enable
 
 " weird hack for nerdtree to work
 let mapleader = "\\"

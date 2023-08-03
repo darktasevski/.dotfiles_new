@@ -119,7 +119,8 @@ cask "little-snitch", args: { appdir: "~/Applications" }
 cask "suspicious-package", args: { appdir: "~/Applications" }
 cask "the-unarchiver", args: { appdir: "~/Applications" }   # Unarchiver is a free utility for extracting archives
 cask "transmission", args: { appdir: "~/Applications" }     # Transmission is a bittorrent client
-cask "whatsapp", args: { appdir: "~/Applications" }     # Transmission is a bittorrent client
+cask "whatsapp", args: { appdir: "~/Applications" }     	# Transmission is a bittorrent client
+cask "betterdisplay", args: { appdir: "~/Applications" } 	# BetterDisplay is a utility to change the resolution of your monitor
 cask "grammarly"
 # ## Install Fonts
 cask "font-iosevka"
