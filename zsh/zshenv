@@ -83,7 +83,7 @@ if ! command -v volta >/dev/null; then
 fi
 
 # git
-export GIT_REVIEW_BASE="master" # See gitconfig
+export GIT_REVIEW_BASE="main" # See gitconfig
 GIT_EMAIL="darktasevski@gmail.com"
 GIT_USER="Darkø Tasevski"
 #. "$HOME/.cargo/env"

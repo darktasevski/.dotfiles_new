@@ -1,6 +1,16 @@
-Include /Users/darko.tasevski/.colima/ssh_config
+Include /Users/darko.tasevski/.config/colima/ssh_config
 
-Include /Users/Darko.Tasevski/.colima/ssh_config
+Host github.com
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/fraktal.pub
+  IdentitiesOnly yes
+
+Host github-personal
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/github_personal.pub
+  IdentitiesOnly yes
 
 Host *
 	IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"

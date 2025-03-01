@@ -53,9 +53,7 @@ brew "php" 													# A popular general-purpose scripting language
 brew "pinentry-mac" 										# A graphical password entry dialog
 brew "pv" 													# Monitor data passing through a filter
 brew "rename" 												# Perl-powered file rename script with many helpful built-ins
-brew "rust" 												# A system for writing safe, portable and efficient software
 brew "ssh-copy-id" 											# Copy SSH public keys to clipboard
-brew "telnet" 												# A terminal emulator for the TELNET protocol
 brew "tokei" 												# A terminal-based code metrics tool
 brew "tree" 												# Display directories as trees (with optional color/HTML output)
 brew "watchman" 											# Watch files and take action when they change
@@ -70,7 +68,6 @@ brew "federico-terzi/espanso/espanso" 						# Cross-platform Text Expander writt
 brew "fzf" 													# A command-line fuzzy finder
 brew "starship"												# The minimal, blazing-fast, and infinitely customizable prompt for any shell!
 brew "neovim"												# Neovim is a text editor focused on extensibility and agility
-brew "yarn"  												# Yarn is a package manager for Node.js
 brew "tmux"  												# Tmux is a terminal multiplexer
 brew "tmuxp"  												# Tmux session manager
 brew "imagemagick"  										# ImageMagick is a software suite to create, edit, compose, or convert bitmap images
@@ -82,40 +79,39 @@ brew "remotemobprogramming/brew/mob"						# mob is a tool to manage mob programm
 
 cask "adoptopenjdk13", args: { appdir: "~/Applications" }   # Java Development Kit
 cask "android-platform-tools" 								# Android SDK Platform-Tools
-cask "betterzip", args: { appdir: "~/Applications" } 		# BetterZip is a GUI for 7-Zip
-# cask "mediainfo"											# MediaInfo is a free and open-source utility for gathering technical metadata of multimedia files
-# cask "ngrok" 												# ngrok is a free, open-source, secure tunneling service
 cask "anki"													# Anki is a free, open-source, cross-platform flashcard application
 cask "open-in-code" 										# Open in Code is a finder addon to open selected file/directory in the VS Code
 cask "1password" 											# password manager
-cask "charles"												# Charles is a network protocol analyzer
+cask "charles"			 									# Charles is a network protocol analyzer
 cask "devutils"												# Offline toolbox for developers
 cask "dropbox" 												# Dropbox is a cloud storage service
 cask "geogebra"												# Solve, save and share math problems, graph functions, etc
 cask "iina" 												# video player
 cask "iterm2"												# iTerm2 is a terminal emulator
 cask "mathpix-snipping-tool" 								# Scanner app for math and science
-# cask "obsidian" 											# Knowledge base that works on top of a local folder of plain text Markdown files
 cask "postman" 												# Collaboration platform for API development
 cask "spotify"
 cask "slack"
 cask "sketch"
 # cask "affinity-designer"
-cask "raindropio"
-cask "visual-studio-code"
+# cask "raindropio"
+# cask "visual-studio-code"
 cask "webstorm"
 cask "intellij-idea"
-cask "viber"
+# cask "viber"
 cask "telegram"
 # cask "zoom"
 cask "alfred"
 cask "lulu"
-cask "rewind", args: { appdir: "~/Applications" }
+cask "bartender"
+cask "blender"
+cask "dictionaries"
+cask "parallels"
 cask "rocket", args: { appdir: "~/Applications" }
 cask "steam", args: { appdir: "~/Applications" }
 cask "notion", args: { appdir: "~/Applications" }
 cask "cleanshot", args: { appdir: "~/Applications" }
-cask "little-snitch", args: { appdir: "~/Applications" }
+# cask "little-snitch", args: { appdir: "~/Applications" }
 cask "suspicious-package", args: { appdir: "~/Applications" }
 cask "the-unarchiver", args: { appdir: "~/Applications" }   # Unarchiver is a free utility for extracting archives
 cask "transmission", args: { appdir: "~/Applications" }     # Transmission is a bittorrent client
@@ -137,4 +133,4 @@ cask "quicklook-csv", args: { appdir: "~/Applications" }
 cask "quicklook-json", args: { appdir: "~/Applications" }
 cask "webpquicklook", args: { appdir: "~/Applications" }
 cask "apparency", args: { appdir: "~/Applications" }
-cask "syntax-highlight", args: { appdir: "~/Applications", no-quarantine: true }
+cask "syntax-highlight", args: { appdir: "~/Applications", no_quarantine: true }
