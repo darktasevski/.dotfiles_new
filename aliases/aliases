@@ -249,6 +249,14 @@ alias lynx='lynx -vikeys -accept_all_cookies'
 # +----------+
 
 alias nvp='npm version patch'
+alias na='npm add'
+alias nad='npm add --save-dev'
+alias nrn='npm run'
+
+alias pna='pnpm add'
+alias pnad='pnpm add --save-dev'
+alias pnrn='pnpm run'
+
 # Yarn aliases
 alias ya="yarn add"
 alias ycc="yarn cache clean"

@@ -11,11 +11,11 @@ brew "bat" 													# cat, but with syntax highlighting
 brew "nss" 													# Network Security Services
 brew "ack" 													# Search tool like grep, but optimized for programmers
 brew "adns" 												# C/C++ resolver library and DNS resolver utilities
-brew "awscli" 												# Official Amazon AWS command-line interface
+# brew "awscli" 												# Official Amazon AWS command-line interface
 brew "bandwhich" 											# Terminal bandwidth utilization tool
 brew "coreutils" 											# GNU File, Shell and Text utilities
 brew "curl" 												# Command line tool for transferring data with URL syntax
-brew "httpie"												# httpie is a CLI, cURL-like tool for humans.
+# brew "httpie"												# httpie is a CLI, cURL-like tool for humans.
 brew "diff-so-fancy" 										# Good-lookin' diffs with diff-highlight and more
 brew "exa" 													# Modern replacement for ls
 brew "fd" 													# A simple, fast and user-friendly alternative to find
@@ -38,7 +38,7 @@ brew "pango" 												# Library for laying out and rendering text
 brew "librsvg" 												# Library to render SVG files using Cairo
 brew "luajit" 												# Just-In-Time Compiler (JIT) for the Lua programming language
 brew "luarocks" 											# Lua module manager
-brew "lynx" 												# Text-based web browser
+# brew "lynx" 												# Text-based web browser
 brew "maven" 												# Java-based project management and packaging
 brew "moreutils" 											# Collection of the UNIX tools
 brew "mysql" 												# MySQL database server
@@ -57,7 +57,7 @@ brew "ssh-copy-id" 											# Copy SSH public keys to clipboard
 brew "tokei" 												# A terminal-based code metrics tool
 brew "tree" 												# Display directories as trees (with optional color/HTML output)
 brew "watchman" 											# Watch files and take action when they change
-brew "watson" 												# Command-line tool to track (your) time
+# brew "watson" 												# Command-line tool to track (your) time
 brew "webkit2png" 											# Create screenshots of webpages from the terminal
 brew "wget" 												# A command line tool to retrieve files from the web
 brew "woff2" 												# Utilities to create and convert Web Open Font File (WOFF) files
@@ -71,11 +71,11 @@ brew "neovim"												# Neovim is a text editor focused on extensibility and 
 brew "tmux"  												# Tmux is a terminal multiplexer
 brew "tmuxp"  												# Tmux session manager
 brew "imagemagick"  										# ImageMagick is a software suite to create, edit, compose, or convert bitmap images
-brew "muffet" 												# website link checker which scrapes and inspects all pages in a website recursively
+# brew "muffet" 												# website link checker which scrapes and inspects all pages in a website recursively
 brew "reattach-to-user-namespace"							# Reattach process (e.g., tmux) to background
 brew "urlview"							                	#
 brew "shellcheck"							                # ShellCheck is a static analysis tool for shell scripts
-brew "remotemobprogramming/brew/mob"						# mob is a tool to manage mob programming sessions directly from the command line
+# brew "remotemobprogramming/brew/mob"						# mob is a tool to manage mob programming sessions directly from the command line
 
 cask "adoptopenjdk13", args: { appdir: "~/Applications" }   # Java Development Kit
 cask "android-platform-tools" 								# Android SDK Platform-Tools
@@ -83,28 +83,28 @@ cask "anki"													# Anki is a free, open-source, cross-platform flashcard 
 cask "open-in-code" 										# Open in Code is a finder addon to open selected file/directory in the VS Code
 cask "1password" 											# password manager
 cask "charles"			 									# Charles is a network protocol analyzer
-cask "devutils"												# Offline toolbox for developers
+# cask "devutils"												# Offline toolbox for developers
 cask "dropbox" 												# Dropbox is a cloud storage service
-cask "geogebra"												# Solve, save and share math problems, graph functions, etc
+# cask "geogebra"												# Solve, save and share math problems, graph functions, etc
 cask "iina" 												# video player
 cask "iterm2"												# iTerm2 is a terminal emulator
-cask "mathpix-snipping-tool" 								# Scanner app for math and science
-cask "postman" 												# Collaboration platform for API development
+# cask "mathpix-snipping-tool" 								# Scanner app for math and science
+# cask "postman" 												# Collaboration platform for API development
 cask "spotify"
 cask "slack"
-cask "sketch"
+# cask "sketch"
 # cask "affinity-designer"
 # cask "raindropio"
 # cask "visual-studio-code"
-cask "webstorm"
-cask "intellij-idea"
+# cask "webstorm"
+# cask "intellij-idea"
 # cask "viber"
 cask "telegram"
 # cask "zoom"
 cask "alfred"
 cask "lulu"
 cask "bartender"
-cask "blender"
+# cask "blender"
 cask "dictionaries"
 cask "parallels"
 cask "rocket", args: { appdir: "~/Applications" }
@@ -117,7 +117,7 @@ cask "the-unarchiver", args: { appdir: "~/Applications" }   # Unarchiver is a fr
 cask "transmission", args: { appdir: "~/Applications" }     # Transmission is a bittorrent client
 cask "whatsapp", args: { appdir: "~/Applications" }     	# Transmission is a bittorrent client
 cask "betterdisplay", args: { appdir: "~/Applications" } 	# BetterDisplay is a utility to change the resolution of your monitor
-cask "grammarly"
+# cask "grammarly"
 # ## Install Fonts
 cask "font-iosevka"
 cask "font-inconsolata"

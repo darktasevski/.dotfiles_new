@@ -96,6 +96,7 @@ zplug "djui/alias-tips", from:github
 zplug "zlsun/solarized-man", from:github
 zplug "zsh-users/zsh-autosuggestions" # suggests commands as you type based on history and completions.
 zplug "zsh-users/zsh-syntax-highlighting", from:github, defer:2
+zplug "ptavares/zsh-direnv"
 # zplug romkatv/powerlevel10k, as:theme, depth:1
 if [[ "$(uname)" == "Linux" ]]; then
 	zplug "rupa/z", use:z.sh
@@ -211,3 +212,16 @@ if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/google-cloud-sdk/
 
 # The next line enables shell command completion for gcloud.
 if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/google-cloud-sdk/completion.zsh.inc"; fi
+
+# pnpm
+export PNPM_HOME="/Users/darko.tasevski/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+alias claude="/Users/darkotasevski/.claude/local/claude"
+
+# bun completions
+[ -s "/Users/darkotasevski/.bun/_bun" ] && source "/Users/darkotasevski/.bun/_bun"

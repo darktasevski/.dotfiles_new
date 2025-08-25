@@ -86,7 +86,9 @@ fi
 export GIT_REVIEW_BASE="main" # See gitconfig
 GIT_EMAIL="darktasevski@gmail.com"
 GIT_USER="Darkø Tasevski"
-#. "$HOME/.cargo/env"
+. "$HOME/.cargo/env"
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-export PATH="$VOLTA_HOME/bin:$PATH"
+export PATH=/opt/homebrew/Cellar/ruby/3.4.2/bin:$PATH
+
+# . /opt/homebrew/opt/asdf/libexec/asdf.sh

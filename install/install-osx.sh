@@ -8,10 +8,10 @@
 #    chmod -R g+w /Library/Caches/Homebrew
 
 # This is a bit better one @see https://gist.github.com/irazasyed/7732946
-sudo chown -R "$(whoami)" /usr/local/Homebrew
-sudo mkdir -p /usr/local/sbin /usr/local/Frameworks
-sudo chown -R "$(whoami)" /usr/local/sbin /usr/local/Frameworks
-sudo install -d -o "$(whoami)" -g admin /usr/local/Frameworks
+# sudo chown -R "$(whoami)" /usr/local/Homebrew
+# sudo mkdir -p /usr/local/sbin /usr/local/Frameworks
+# sudo chown -R "$(whoami)" /usr/local/sbin /usr/local/Frameworks
+# sudo install -d -o "$(whoami)" -g admin /usr/local/Frameworks
 
 if ! command -v brew >/dev/null; then
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -24,9 +24,9 @@ if ! command -v volta >/dev/null; then
 	curl https://get.volta.sh | bash
 fi
 
-if ! command -v yarn >/dev/null; then
-	curl -o- -L https://yarnpkg.com/install.sh | bash
-fi
+# if ! command -v yarn >/dev/null; then
+# 	curl -o- -L https://yarnpkg.com/install.sh | bash
+# fi
 
 brew bundle install --verbose --file="$DOTFILES"/osx/Brewfile
 
